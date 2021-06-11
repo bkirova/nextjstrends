@@ -2,7 +2,6 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Header from './header'
 
-const name = 'Your Name'
 export const siteTitle = 'Next.js Sample Website'
 
 export default function Layout({ children, home }) {
@@ -28,13 +27,6 @@ export default function Layout({ children, home }) {
       <Header/>
       
       <main>{children}</main>
-      {!home && (
-        <div className={styles.backToHome}>
-          <Link href="/">
-            <a>← Back to home</a>
-          </Link>
-        </div>
-      )}
     </div>
   )
 }
