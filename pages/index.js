@@ -17,7 +17,8 @@ export default function Home() {
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M5 13l4 4L19 7" />
                 </svg>
               </button>
-            <h2 class="sm:text-lg sm:leading-snug font-semibold tracking-wide uppercase text-purple-600 mb-3">twitter</h2>
+            <h2 class="sm:text-lg sm:leading-snug font-semibold tracking-wide uppercase text-purple-600 mb-3">
+              twitter</h2>
             <p class="text-3xl sm:text-5xl lg:text-6xl leading-none font-extrabold text-gray-800 tracking-tight mb-8">World-class IDE integration.</p>
             <div class="text-2xl font-bold text-gray-500 tracking-wide space-y-6 mb-6">Worried about remembering all of these class <span class="font-extrabold text-purple-400">names</span>? The Tailwind CSS IntelliSense extension for VS Code has you covered.</div>
             <div class="text-xl text-gray-500 tracking-wide space-y-6 mb-6">Worried about remembering all of <span class="font-extrabold text-purple-400">these</span> class names? The Tailwind CSS IntelliSense extension for <span class="font-extrabold text-purple-400">VS Code</span> has you covered.</div>
