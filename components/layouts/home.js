@@ -1,10 +1,11 @@
 import Head from 'next/head'
-import Link from 'next/link'
-import Header from './header'
+import Footer from '../footer'
+import Header from '../header'
+import SideBar from '../sidebar'
 
 export const siteTitle = 'Next.js Sample Website'
 
-export default function Layout({ children, home }) {
+export default function Layout({ children }) {
   return (
     <div>
       
@@ -25,8 +26,15 @@ export default function Layout({ children, home }) {
       </Head>
       
       <Header/>
-      
-      <main>{children}</main>
+      <div class="flex w-full max-w-7xl mx-auto px-4 sm:px-6">
+        <aside class="h-screen sticky top-0">
+          <SideBar/>
+        </aside>
+        <div class="">
+          <main>{children}</main>
+        </div>
+      </div>
+      <Footer/>
     </div>
   )
 }
