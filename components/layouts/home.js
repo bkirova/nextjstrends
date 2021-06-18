@@ -27,10 +27,10 @@ export default function Layout({ children }) {
       
       <Header/>
       <div class="flex w-full max-w-7xl mx-auto px-4 sm:px-6">
-        <aside class="h-screen sticky top-0">
+        <aside class="h-screen sticky top-0 w-1/4">
           <SideBar/>
         </aside>
-        <div class="">
+        <div class="w-3/4">
           <main>{children}</main>
         </div>
       </div>
