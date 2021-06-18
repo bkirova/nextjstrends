@@ -1,8 +1,11 @@
 
 import Layout from '../components/layouts/home'
+import TrendsList from '../components/trendsList'
 
 export default function Trends() {
     return (
-        <Layout></Layout>
+        <Layout>
+            <TrendsList></TrendsList>
+        </Layout>
     ) 
 }

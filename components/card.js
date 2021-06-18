@@ -1,7 +1,7 @@
 export default function Card({item}) {
 
     return (
-        <div class="relative bg-white py-6 px-6 rounded-3xl w-64 my-4 shadow-xl">
+        <div class="relative bg-white py-6 px-6 rounded-3xl w-64 my-4 shadow-2xl">
            
         <div class="mt-8">
             <p class="text-xl font-semibold my-2">{item.title}</p>
