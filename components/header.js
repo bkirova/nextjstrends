@@ -28,11 +28,11 @@ export default function Example() {
                 </a>
 
                 <a href="/ai" className="text-base font-medium text-gray-500 hover:text-gray-900 items-center inline-flex">
-                  <span class="pr-2">I </span>
+                  <span class="pr-1">I </span>
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                     <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" />
                   </svg> 
-                  <span class="pl-2">AI</span>
+                  <span class="pl-1">AI</span>
                 </a>
                 <a href="https://devghoststories.com/" className="text-base font-medium text-gray-500 hover:text-gray-900 items-center inline-flex">
                   Blog
