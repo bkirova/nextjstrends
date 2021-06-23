@@ -26,11 +26,11 @@ export default function Layout({ children }) {
       </Head>
       
       <Header/>
-      <div class="flex w-full max-w-7xl mx-auto px-4 sm:px-6">
-        <aside class="h-screen sticky top-0 w-1/4">
+      <div className="flex w-full max-w-7xl mx-auto px-4 sm:px-6">
+        <aside className="h-screen sticky top-0 w-1/4">
           <SideBar/>
         </aside>
-        <div class="w-3/4">
+        <div className="w-3/4">
           <main>{children}</main>
         </div>
       </div>

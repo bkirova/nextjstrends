@@ -17,7 +17,7 @@ let items = [
 export default function Top() {
     return (
         <Layout>
-            <div class="text-2xl font-bold text-gray-500 tracking-wide space-y-6 mb-6 mt-20">Worried about remembering all of these class <span class="font-extrabold text-purple-400">names</span>? The Tailwind CSS IntelliSense extension for VS Code has you covered.</div>
+            <div className="text-2xl font-bold text-gray-500 tracking-wide space-y-6 mb-6 mt-20">Worried about remembering all of these className <span className="font-extrabold text-purple-400">names</span>? The Tailwind CSS IntelliSense extension for VS Code has you covered.</div>
 
             <TopList items={items}></TopList>
         </Layout>
