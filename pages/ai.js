@@ -95,11 +95,9 @@ export default function AI() {
               <div key={index} className="image-item py-5">
                 <div style={isDragging ? { color: "red" } : null}
                   onClick={onImageUpload} {...dragProps} className={`flex w-full items-center content-center justify-center bg-white-500 hover:bg-gray-100 mb-2`}>
-                    {/* <img src={image.data_url} alt=""/> */}
                     <div class="bg-green-300 w-full h-1/2">
-                      <img class="object-cover h-full w-full" src={image.data_url}/>    
+                      <img class="object-cover max-h-96 w-full" src={image.data_url}/>    
                     </div>
-
                 </div>
 
                 <div className="flex items-center content-center justify-center">

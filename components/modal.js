@@ -50,7 +50,10 @@ export default function Modal({isOpen, closeModal, randomPost, getRandomStory}) 
                     </div>
                     <span className="px-2 hover:bg-gray-300 cursor-pointer rounded"><i className="fas fa-ellipsis-h pt-2 text-lg"></i></span>
                     </div>
-                    <img className="w-full bg-cover" src={randomPost.image}/>
+                    <div class="bg-green-300 w-full h-1/2">
+                      <img class="object-cover max-h-96 w-full" src={randomPost.image}/>    
+                    </div>
+                    {/* <img className="w-full bg-cover" src={randomPost.image}/> */}
                     <div className="px-3 pb-2">
                     <div className="pt-2">
                         <i className="far fa-heart cursor-pointer"></i>
