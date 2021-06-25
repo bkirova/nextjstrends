@@ -5,15 +5,15 @@ export default function Menu({ fixed }) {
   return (
     <>
       <div className="flex flex-wrap py-2">
-        <div className="w-full px-4">
+        <div className="w-full px-2">
           <nav className="relative flex flex-wrap items-center justify-between px-2 py-3 rounded">
             <div className="container mx-auto flex flex-wrap items-center justify-between">
               <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
                 <a
                   className="text-3xl font-extrabold text-gray-700"
-                  href="#pablo"
+                  href="/"
                 >
-                  TrendsAI
+                  <span className="text-yellow-300">AI</span> Stories
                 </a>
                 <button
                   className="cursor-pointer text-xl leading-none px-3 py-1 border border-solid rounded block lg:hidden focus:outline-none"
@@ -48,14 +48,14 @@ export default function Menu({ fixed }) {
                       AI Generated
                     </a>
                   </li>
-                  <li className="nav-item">
+                  {/* <li className="nav-item">
                     <a
                       className="px-3 py-2 text-base font-medium text-gray-500 hover:text-gray-900 items-center inline-flex"
                       href="/trends"
                     >
                       Trends
                     </a>
-                  </li>
+                  </li> */}
                   <li className="nav-item">
                     <a
                       className="px-3 py-2 text-base font-medium text-gray-500 hover:text-gray-900 items-center inline-flex"
