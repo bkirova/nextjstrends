@@ -31,7 +31,7 @@ export default function AI() {
       const predictions = await model.detect(img);
       setPredictions(predictions);
       console.error(predictions)
-      predictions.map(p => drawObject(p.bbox))
+      predictions.map(p => drawObject(p))
     }, 2000)
     
   };
@@ -118,14 +118,14 @@ export default function AI() {
                        centerShift_x,centerShift_y,img.width*ratio, img.height*ratio);  
  }
 
-  function drawObject(bbox) {
+  function drawObject(prediction) {
     const colors = ['fddd1f', 'ef2933', '156af9', '87f140'];
     let randomColor = colors[Math.floor(Math.random()*colors.length)];
 
-    const x = bbox[0];
-    const y = bbox[1];
-    const width = bbox[2];
-    const height = bbox[3];
+    const x = prediction.bbox[0];
+    const y = prediction.bbox[1];
+    const width = prediction.bbox[2];
+    const height = prediction.bbox[3];
     
     const canvas = document.getElementById("canvas");
     const ctx = canvas.getContext("2d");
@@ -134,7 +134,7 @@ export default function AI() {
     ctx.lineWidth = 5;
     ctx.fillStyle = `#${randomColor}`;
     ctx.strokeRect(x, y, width, height);
-    ctx.fillText('test', x+5, y+10);
+    ctx.fillText(`${prediction.class}: ${parseInt(prediction.score)}%`, x+5, y+10);
 
   }
 
@@ -178,12 +178,6 @@ export default function AI() {
                     <div className="bg-green-300 w-full h-1/2">
                       <img id="img" className=" hidden object-cover max-h-96 w-full" src={image.data_url}/>   
                       <canvas id="canvas"></canvas> 
-                      {/* {predictions.map((prediction) => (
-                        <div>
-                        <span>{prediction.class}, {prediction.score}</span>
-                        
-                        </div>
-                      ))} */}
                     </div>
                 </div>
 
@@ -215,6 +209,11 @@ export default function AI() {
                         {vibe.value}
                       </div>
                     ))}
+                    {predictions.map((prediction) => (
+                        <div className='inline-block text-xs font-bold mr-1 mb-2 px-2 py-1 opacity-100'>
+                          {prediction.class},
+                        </div>
+                      ))}
                   </div>
 
                   <div className="mb-10">
