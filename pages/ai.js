@@ -6,16 +6,34 @@ import ImageUploading from "react-images-uploading";
 import Modal from "../components/modal";
 import { useState } from 'react'
 import imageAnalysisData from '../data/image_analysis.json'
+require('@tensorflow/tfjs-backend-cpu');
+require('@tensorflow/tfjs-backend-webgl');
+const cocoSsd = require('@tensorflow-models/coco-ssd');
 
 export default function AI() {
   
   const [images, setImages] = React.useState([]);
+  const [predictions, setPredictions] = React.useState([]);
   const [isDragDropVisible, setIsDragDropVisible] = React.useState(true);
 
-  const onChange = (imageList) => {
+  const onChange = async (imageList) => {
     setImages(imageList);
     setImageData(getRandomAnalysis());
     setIsDragDropVisible(false);
+
+    const img = document.getElementById('img');
+    const model = await cocoSsd.load();
+
+    drawImage(imageList[0].data_url);
+
+    setTimeout(async () => {
+      // Classify the image.
+      const predictions = await model.detect(img);
+      setPredictions(predictions);
+      console.error(predictions)
+      predictions.map(p => drawObject(p.bbox))
+    }, 2000)
+    
   };
 
   let [isOpen, setIsOpen] = useState(false)
@@ -71,6 +89,51 @@ export default function AI() {
     };
   }
 
+  function drawImage(data_url) {
+    const canvas = document.getElementById("canvas");
+    const ctx = canvas.getContext("2d");
+    
+    var image = new Image();
+    
+    image.src = data_url
+    image.onload = function() {
+      canvas.width = image.width;
+      canvas.height = image.height;
+      canvas.style.width = "340px";
+      canvas.style.height = "600px";
+      //ctx.drawImage(image, 0, 0);
+      drawImageScaled(image, ctx)
+
+      //ctx.scale(-1, 1);
+    };
+    
+  }
+
+  function drawImageScaled(img, ctx) {
+    var canvas = ctx.canvas ;
+    var hRatio = canvas.width  / img.width    ;
+    var vRatio =  canvas.height / img.height  ;
+    var ratio  = Math.min ( hRatio, vRatio );
+    var centerShift_x = ( canvas.width - img.width*ratio ) / 2;
+    var centerShift_y = ( canvas.height - img.height*ratio ) / 2;  
+    ctx.clearRect(0,0,canvas.width, canvas.height);
+    ctx.drawImage(img, 0,0, img.width, img.height,
+                       centerShift_x,centerShift_y,img.width*ratio, img.height*ratio);  
+ }
+
+  function drawObject(bbox) {
+    const x = bbox[0];
+    const y = bbox[1];
+    const width = bbox[2];
+    const height = bbox[3];
+    
+    const canvas = document.getElementById("canvas");
+    const ctx = canvas.getContext("2d");
+
+    ctx.strokeStyle = "#FF0000";
+    ctx.strokeRect(x, y, width, height);
+  }
+
   const getRandomStory = () => {
     setRandomPost(generateRandomPost())
   }
@@ -108,8 +171,15 @@ export default function AI() {
               <div key={index} className="image-item py-5">
                 <div style={isDragging ? { color: "red" } : null}
                   onClick={onImageUpload} {...dragProps} className={`flex w-full items-center content-center justify-center bg-white-500 hover:bg-gray-100 mb-2`}>
-                    <div class="bg-green-300 w-full h-1/2">
-                      <img class="object-cover max-h-96 w-full" src={image.data_url}/>    
+                    <div className="bg-green-300 w-full h-1/2">
+                      <img id="img" className=" hidden object-cover max-h-96 w-full" src={image.data_url}/>   
+                      <canvas id="canvas"></canvas> 
+                      {/* {predictions.map((prediction) => (
+                        <div>
+                        <span>{prediction.class}, {prediction.score}</span>
+                        
+                        </div>
+                      ))} */}
                     </div>
                 </div>
 
