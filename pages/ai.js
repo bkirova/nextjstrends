@@ -99,12 +99,9 @@ export default function AI() {
     image.onload = function() {
       canvas.width = image.width;
       canvas.height = image.height;
-      canvas.style.width = "340px";
-      canvas.style.height = "600px";
-      //ctx.drawImage(image, 0, 0);
+      canvas.style.width = "100%";
+      canvas.style.height = "100%";
       drawImageScaled(image, ctx)
-
-      //ctx.scale(-1, 1);
     };
     
   }
