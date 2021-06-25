@@ -21,7 +21,7 @@ export default function Modal({isOpen, closeModal, randomPost, getRandomStory}) 
               leaveFrom="opacity-100"
               leaveTo="opacity-0"
             >
-              <Dialog.Overlay className="fixed inset-0" />
+              <Dialog.Overlay className="fixed inset-0 bg-gray-800 bg-opacity-80 transition-opacity" />
             </Transition.Child>
 
             {/* This element is to trick the browser into centering the modal contents. */}
@@ -44,14 +44,14 @@ export default function Modal({isOpen, closeModal, randomPost, getRandomStory}) 
                     <div className="w-full flex justify-between p-3">
                     <div className="flex">
                         <div className="rounded-full h-8 w-8 bg-gray-500 flex items-center justify-center overflow-hidden">
-                            <img src="https://www.byrdie.com/thmb/a6rK0tlBEsIV2R6XquQP-krhMH8=/1277x849/filters:no_upscale():max_bytes(150000):strip_icc()/kiera-knightley-long-bob-57bef22b3df78cc16ef95c5c.jpg" alt="profilepic"/>
+                            <img src="https://i.pinimg.com/originals/b2/a3/61/b2a36142f4a84c6b5dd221d952d1d424.jpg" alt="profilepic"/>
                         </div>
                         <span className="pt-1 ml-2 font-bold text-sm">{randomPost.userName}</span>
                     </div>
                     <span className="px-2 hover:bg-gray-300 cursor-pointer rounded"><i className="fas fa-ellipsis-h pt-2 text-lg"></i></span>
                     </div>
-                    <div class="bg-green-300 w-full h-1/2">
-                      <img class="object-cover max-h-96 w-full" src={randomPost.image}/>    
+                    <div class="bg-green-300 w-full h-full">
+                      <img class="object-cover max-h-96 min-h-full w-full" src={randomPost.image}/>    
                     </div>
                     {/* <img className="w-full bg-cover" src={randomPost.image}/> */}
                     <div className="px-3 pb-2">
@@ -84,10 +84,10 @@ export default function Modal({isOpen, closeModal, randomPost, getRandomStory}) 
                 <div className="m-4">
                   <button
                     type="button"
-                    className="inline-flex justify-center px-4 py-2 text-sm font-medium text-blue-900 bg-blue-100 border border-transparent rounded-md hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500"
+                    className="inline-flex justify-center px-4 py-2 text-sm font-medium text-gray-900 bg-gray-100 border border-transparent rounded-sm hover:bg-gray-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-gray-500"
                     onClick={getRandomStory}
                   >
-                    Create Another
+                    Refresh
                   </button>
                 </div>
               </div>
