@@ -122,6 +122,9 @@ export default function AI() {
  }
 
   function drawObject(bbox) {
+    const colors = ['fddd1f', 'ef2933', '156af9', '87f140'];
+    let randomColor = colors[Math.floor(Math.random()*colors.length)];
+
     const x = bbox[0];
     const y = bbox[1];
     const width = bbox[2];
@@ -130,8 +133,11 @@ export default function AI() {
     const canvas = document.getElementById("canvas");
     const ctx = canvas.getContext("2d");
 
-    ctx.strokeStyle = "#FF0000";
+    ctx.strokeStyle = `#${randomColor}`;
+    ctx.fillStyle = `#${randomColor}`;
     ctx.strokeRect(x, y, width, height);
+    ctx.fillText('test', x+5, y+10);
+
   }
 
   const getRandomStory = () => {
