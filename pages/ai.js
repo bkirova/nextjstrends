@@ -131,6 +131,7 @@ export default function AI() {
     const ctx = canvas.getContext("2d");
 
     ctx.strokeStyle = `#${randomColor}`;
+    ctx.lineWidth = 5;
     ctx.fillStyle = `#${randomColor}`;
     ctx.strokeRect(x, y, width, height);
     ctx.fillText('test', x+5, y+10);
