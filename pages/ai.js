@@ -1,5 +1,5 @@
 
-import Layout from '../components/layouts/home'
+import Layout from '../components/layouts/ai'
 
 import React from "react";
 import ImageUploading from "react-images-uploading";
@@ -72,6 +72,8 @@ export default function AI() {
     <Layout>
       <Modal isOpen={isOpen} closeModal={closeModal} randomPost={randomPost} getRandomStory={getRandomStory}/>
 
+      <div className="text-2xl font-bold text-gray-500 tracking-wide space-y-6 mb-6 mt-8 lg:mt-20">Upload image and get tags and stories generated specificly for it.</div>
+
       <ImageUploading
         value={images}
         onChange={onChange}
@@ -83,29 +85,33 @@ export default function AI() {
           isDragging,
           dragProps
         }) => (
-          <div className="upload__image-wrapper">
-            <div show={false} style={isDragging ? { color: "red" } : null}
+          <div className="upload__image-wrapper ">
+            <div style={isDragging ? { color: "red" } : null}
               onClick={onImageUpload} {...dragProps} className={`${isDragDropVisible ? 'flex' : 'hidden'} w-full h-64 items-center content-center justify-center bg-white-500 hover:bg-gray-100 font-bold rounded border-4`}>
                 Click or Drop here
             </div>
 
-            
-
             {imageList.map((image, index) => (
               <div key={index} className="image-item py-5">
-                <img className="mb-2" src={image.data_url} alt=""/>
-                <button onClick={showModal} className="inline-flex items-center bg-gray-500 hover:bg-gray-400 text-white font-bold py-2 px-4 border-b-4 border-gray-700 hover:border-gray-500 rounded mr-2">
-                  <span className="">Get Random Post</span>
-                </button>
-                
-                <button onClick={showModal} className="inline-flex items-center bg-gray-500 hover:bg-gray-400 text-white font-bold py-2 px-4 border-b-4 border-gray-700 hover:border-gray-500 rounded mr-2">
-                  <span className="">Set Custom Vibes</span>
-                </button>
+                <div style={isDragging ? { color: "red" } : null}
+                  onClick={onImageUpload} {...dragProps} className={`flex w-full items-center content-center justify-center bg-white-500 hover:bg-gray-100 mb-2`}>
+                    {/* <img src={image.data_url} alt=""/> */}
+                    <div class="bg-green-300 w-full h-1/2">
+                      <img class="object-cover h-full w-full" src={image.data_url}/>    
+                    </div>
 
-                <button onClick={onImageUpload} className="inline-flex items-center bg-gray-500 hover:bg-gray-400 text-white font-bold py-2 px-4 border-b-4 border-gray-700 hover:border-gray-500 rounded">
-                  <span className="">Upload new image</span>
-                </button>
-             
+                </div>
+
+                <div className="flex items-center content-center justify-center">
+                  <button onClick={showModal} className="inline-flex items-center bg-gray-500 hover:bg-gray-400 text-white font-bold py-2 px-4 border-b-4 border-gray-700 hover:border-gray-500 rounded mr-2">
+                    <span className="">Get Random Post</span>
+                  </button>
+                  
+                  <button onClick={showModal} className="inline-flex items-center bg-gray-500 hover:bg-gray-400 text-white font-bold py-2 px-4 border-b-4 border-gray-700 hover:border-gray-500 rounded">
+                    <span className="">Set Custom Vibes</span>
+                  </button>
+                </div>
+
                 <div className="container min-w-full pt-10">
                   <div className="mb-10">
                     <h2 className="sm:text-lg sm:leading-snug font-semibold tracking-wide uppercase text-gray-800 mb-2">keywords</h2>
