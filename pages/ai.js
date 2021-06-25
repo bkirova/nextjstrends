@@ -117,7 +117,7 @@ export default function AI() {
                     <h2 className="sm:text-lg sm:leading-snug font-bold tracking-wide uppercase text-gray-800 mb-2">keywords</h2>
 
                     {imageData.keywords && imageData.keywords.map(keyword => (
-                      <span className="inline-block rounded-full text-white bg-black text-xs font-bold mr-1 md:mr-2 mb-2 px-2 md:px-4 py-1 opacity-90 hover:opacity-100">
+                      <span className="inline-block rounded-full text-white bg-black text-xs font-bold mr-1 mb-2 px-2 py-1 opacity-90 hover:opacity-100">
                         {keyword}
                       </span>
                     ))}
@@ -126,7 +126,7 @@ export default function AI() {
                   <div className="mb-10">
                     <h2 className="sm:text-lg sm:leading-snug font-bold tracking-wide uppercase text-gray-800 mb-2 mt-5">Vibes</h2> 
                     {imageData.vibes && imageData.vibes.map(vibe => (
-                      <div className={`inline-block text-white bg-${vibe.sentiment}-400 hover:bg-${vibe.sentiment}-500 duration-300 text-xs font-bold mr-1 md:mr-2 mb-2 px-2 md:px-4 py-1 opacity-90 hover:opacity-100`}>
+                      <div className={`inline-block text-white bg-${vibe.sentiment}-400 text-xs font-bold mr-1 mb-2 px-2 py-1 opacity-90 hover:opacity-100`}>
                         {vibe.value}
                       </div>
                     ))}
