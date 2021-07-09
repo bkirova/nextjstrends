@@ -167,8 +167,13 @@ export default function AI() {
         }) => (
           <div className="upload__image-wrapper ">
             <div style={isDragging ? { color: "red" } : null}
-              onClick={onImageUpload} {...dragProps} className={`${isDragDropVisible ? 'flex' : 'hidden'} w-full h-64 items-center content-center justify-center bg-white-500 hover:bg-gray-100 text-2xl font-extrabold text-gray-700 rounded border-4 animate-pulse`}>
-                Click or Drop here
+              onClick={onImageUpload} {...dragProps} className={`${isDragDropVisible ? 'flex' : 'hidden'} p-20 h-full w-full lg:max-w-xl text-center flex flex-col items-center justify-center items-center hover:bg-gray-100 rounded-lg border-4 border-dashed group text-center`}>
+                
+                <div class="flex flex-auto">
+                  <img class="has-mask h-36 object-center" src="/images/upload.jpg" alt="freepik image"/>
+                </div>
+                <p class="pointer-none text-gray-500 "><span class="text-sm">Drag and drop</span> files here <br /> or <a href="" id="" class="text-blue-600 hover:underline">select a file</a> from your computer</p>
+
             </div>
 
             {imageList.map((image, index) => (
