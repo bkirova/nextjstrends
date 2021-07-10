@@ -18,7 +18,7 @@ export default function Generated() {
 
                     <div className="p-5 bg-white rounded-lg flex items-center justify-between space-x-8 shadow-lg">
                         <div className="flex-1 flex justify-between items-center">
-                        <input class="w-full text-base mr-3 py-2 border-b border-gray-300 focus:outline-none focus:border-purple-500" type="" placeholder="type object, theme mood" value=""/>
+                        <input className="w-full text-base mr-3 py-2 border-b border-gray-300 focus:outline-none focus:border-purple-500" type="" placeholder="type object, theme mood"/>
                         
                         <button type="button" className="p-2 bg-purple-300 hover:bg-purple-400 focus:ring-purple-400 focus:ring-offset-purple-200 text-white transition ease-in duration-200 text-center text-base font-semibold focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg ">
                             Generate

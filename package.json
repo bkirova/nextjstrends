@@ -17,6 +17,7 @@
     "@tensorflow/tfjs-backend-webgl": "^3.7.0",
     "@tensorflow/tfjs-converter": "^3.7.0",
     "@tensorflow/tfjs-core": "^3.7.0",
+    "babel-plugin-styled-components": "^1.13.2",
     "date-fns": "^2.22.1",
     "gray-matter": "^4.0.3",
     "next": "^10.0.0",

@@ -35,9 +35,9 @@ export default function Menu({ fixed }) {
                   <li className="nav-item">
                     <a
                       className="px-3 py-2 text-base font-medium text-gray-500 hover:text-gray-900 items-center inline-flex"
-                      href="/top"
+                      href="/trends"
                     >
-                      Today's Top
+                      Trends
                     </a>
                   </li>
                   <li className="nav-item">
@@ -46,22 +46,6 @@ export default function Menu({ fixed }) {
                       href="/generated"
                     >
                       AI Generated
-                    </a>
-                  </li>
-                  {/* <li className="nav-item">
-                    <a
-                      className="px-3 py-2 text-base font-medium text-gray-500 hover:text-gray-900 items-center inline-flex"
-                      href="/trends"
-                    >
-                      Trends
-                    </a>
-                  </li> */}
-                  <li className="nav-item">
-                    <a
-                      className="px-3 py-2 text-base font-medium text-gray-500 hover:text-gray-900 items-center inline-flex"
-                      href="/about"
-                    >
-                      About
                     </a>
                   </li>
                   <li className="nav-item">
@@ -74,6 +58,14 @@ export default function Menu({ fixed }) {
                         <path fillRule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clipRule="evenodd" />
                       </svg> 
                       <span className="pl-1">AI</span>
+                    </a>
+                  </li>
+                  <li className="nav-item">
+                    <a
+                      className="px-3 py-2 text-base font-medium text-gray-500 hover:text-gray-900 items-center inline-flex"
+                      href="/about"
+                    >
+                      About
                     </a>
                   </li>
                   <li className="nav-item">
