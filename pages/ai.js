@@ -3,7 +3,7 @@ import Layout from '../components/layouts/home'
 
 import React from "react";
 import ImageUploading from "react-images-uploading";
-import Modal from "../components/modal";
+import Modal from "../components/Modal";
 import { useState } from 'react'
 import imageAnalysisData from '../data/image_analysis.json'
 require('@tensorflow/tfjs-backend-cpu');
