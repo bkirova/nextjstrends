@@ -1,7 +1,7 @@
 import Head from 'next/head'
-import Footer from '../footer'
-import Header from '../header'
-import SideBar from '../sidebar'
+import Footer from '../common/Footer'
+import Header from '../common/Header'
+import SideBar from '../common/Sidebar'
 
 export const siteTitle = 'Next.js Sample Website'
 

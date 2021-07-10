@@ -1,6 +1,6 @@
 import Head from 'next/head'
-import Header from '../header'
-import Footer from '../footer'
+import Header from '../common/Header'
+import Footer from '../common/Footer'
 export const siteTitle = 'Next.js Sample Website'
 
 export default function Layout({ children }) {
