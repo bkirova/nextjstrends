@@ -3,7 +3,7 @@ import Layout from '../components/layouts/home'
 
 import React from "react";
 import ImageUploading from "react-images-uploading";
-import Modal from "../components/Modal";
+import Modal from "../components/ai/Modal";
 import { useState } from 'react'
 import imageAnalysisData from '../data/image_analysis.json'
 require('@tensorflow/tfjs-backend-cpu');
@@ -169,10 +169,10 @@ export default function AI() {
             <div style={isDragging ? { color: "red" } : null}
               onClick={onImageUpload} {...dragProps} className={`${isDragDropVisible ? 'flex' : 'hidden'} p-20 h-full w-full lg:max-w-xl text-center flex flex-col items-center justify-center items-center hover:bg-gray-100 rounded-lg border-4 border-dashed group text-center`}>
                 
-                <div class="flex flex-auto">
-                  <img class="has-mask h-36 object-center" src="/images/upload.jpg" alt="freepik image"/>
+                <div className="flex flex-auto">
+                  <img className="has-mask h-36 object-center" src="/images/upload.jpg" alt="freepik image"/>
                 </div>
-                <p class="pointer-none text-gray-500 "><span class="text-sm">Drag and drop</span> files here <br /> or <a href="" id="" class="text-blue-600 hover:underline">select a file</a> from your computer</p>
+                <p className="pointer-none text-gray-500 "><span className="text-sm">Drag and drop</span> files here <br /> or <a href="" id="" className="text-blue-600 hover:underline">select a file</a> from your computer</p>
 
             </div>
 
