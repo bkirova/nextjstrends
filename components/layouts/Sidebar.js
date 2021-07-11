@@ -3,7 +3,7 @@ import Footer from '../common/Footer'
 import Header from '../common/Header'
 import SideBar from '../common/Sidebar'
 import Dot from '../common/Dot'
-import {generateRandomOptions} from '../../utils/shared'
+import {generateRandomDot} from '../../utils/shared'
 
 export const siteTitle = 'AI Stories'
 
@@ -12,11 +12,11 @@ export default function Sidebar({ children }) {
     <div>
       <Head/>
         
-      <Dot options={generateRandomOptions()}></Dot>
-      <Dot options={generateRandomOptions()}></Dot>
-      <Dot options={generateRandomOptions()}></Dot>
-      <Dot options={generateRandomOptions()}></Dot>
-      <Dot options={generateRandomOptions()}></Dot>
+      <Dot options={generateRandomDot()}></Dot>
+      <Dot options={generateRandomDot()}></Dot>
+      <Dot options={generateRandomDot()}></Dot>
+      <Dot options={generateRandomDot()}></Dot>
+      <Dot options={generateRandomDot()}></Dot>
 
       <Header/>
       <div className="flex flex-col w-full mx-auto px-4 lg:flex-row lg:max-w-7xl">
