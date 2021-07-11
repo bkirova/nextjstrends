@@ -1,4 +1,4 @@
-import Layout from '../components/layouts/home'
+import Layout from '../components/layouts/Sidebar'
 import { useState } from 'react'
 import Confetti from 'react-confetti'
 

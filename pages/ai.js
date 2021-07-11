@@ -1,5 +1,5 @@
 
-import Layout from '../components/layouts/home'
+import Layout from '../components/layouts/Sidebar'
 
 import React from "react";
 import ImageUploading from "react-images-uploading";

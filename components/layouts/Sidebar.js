@@ -1,32 +1,17 @@
-import Head from 'next/head'
+import Head from '../common/Head'
 import Footer from '../common/Footer'
 import Header from '../common/Header'
 import SideBar from '../common/Sidebar'
 import Dot from '../common/Dot'
 import {generateRandomOptions} from '../../utils/shared'
 
-export const siteTitle = 'Next.js Sample Website'
+export const siteTitle = 'AI Stories'
 
-export default function Layout({ children }) {
+export default function Sidebar({ children }) {
   return (
     <div>
-      
-      <Head>
-        <link rel="icon" href="/favicon.ico" />
-        <meta
-          name="description"
-          content="Learn how to build a personal website using Next.js"
-        />
-        <meta
-          property="og:image"
-          content={`https://og-image.vercel.app/${encodeURI(
-            siteTitle
-          )}.png?theme=light&md=0&fontSize=75px&images=https%3A%2F%2Fassets.vercel.com%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fnextjs-black-logo.svg`}
-        />
-        <meta name="og:title" content={siteTitle} />
-        <meta name="twitter:card" content="summary_large_image" />
-      </Head>
-      
+      <Head/>
+        
       <Dot options={generateRandomOptions()}></Dot>
       <Dot options={generateRandomOptions()}></Dot>
       <Dot options={generateRandomOptions()}></Dot>

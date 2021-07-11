@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Menu({ fixed }) {
+export default function Menu() {
   const [menuOpen, setMenuOpen] = React.useState(false);
   return (
     <>
