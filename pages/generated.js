@@ -1,5 +1,4 @@
 import Layout from '../components/layouts/Sidebar'
-import CardPlaceholder from '../components/generated/CardPlaceholder'
 import Card from '../components/generated/Card'
 import { useState } from 'react'
 import {generateRandomAIPost} from '../utils/shared'
@@ -60,13 +59,7 @@ export default function Generated() {
                         </div>
                     </div>
 
-                    {(function() {
-                        if (isGenerating || isReady) {
-                            return <Card isPulsing={isGenerating} item={generationData}/>
-                        } else {
-                            return <CardPlaceholder isPulsing={isGenerating}/>
-                        }
-                    })()}
+                    <Card isPulsing={isGenerating} item={generationData}/>
 
                     <button type="button" onClick={() => preview()} className={` ${isReady ? '' : 'hidden'} p-2 float-right bg-blue-300 hover:bg-blue-400 focus:ring-blue-400 focus:ring-offset-blue-200 text-white transition ease-in duration-200 text-center text-base font-semibold focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg`}>
                         Preview Generations
