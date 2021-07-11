@@ -1,6 +1,9 @@
 import Head from 'next/head'
 import Header from '../common/Header'
 import Footer from '../common/Footer'
+import Dot from '../common/Dot'
+import {generateRandomOptions} from '../../utils/shared'
+
 export const siteTitle = 'Next.js Sample Website'
 
 export default function Layout({ children }) {
@@ -23,6 +26,12 @@ export default function Layout({ children }) {
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
       
+      <Dot options={generateRandomOptions()}></Dot>
+      <Dot options={generateRandomOptions()}></Dot>
+      <Dot options={generateRandomOptions()}></Dot>
+      <Dot options={generateRandomOptions()}></Dot>
+      <Dot options={generateRandomOptions()}></Dot>
+
       <Header/>
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <main>{children}</main>
