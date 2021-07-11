@@ -8,8 +8,7 @@ export default function Generated() {
 
     let images = ['/images/1.jpg', '/images/2.jpg', '/images/3.jpg'];
 
-    let [generationData, setGenerationData] = useState({})
-
+    let [generationData, setGenerationData] = useState(null)
     let [isReady, setIsReady] = useState(false)
     let [isGenerating, setIsGenerating] = useState(false)
 
@@ -19,6 +18,7 @@ export default function Generated() {
         index = 0;
         setIsReady(false)
         setIsGenerating(true);
+        setGenerationData(null)
         
         let handler = () => {
             if(images[index]) {
@@ -62,9 +62,9 @@ export default function Generated() {
 
                     {(function() {
                         if (isGenerating || isReady) {
-                            return <Card isPulsing={isGenerating} item={generationData}></Card>
+                            return <Card isPulsing={isGenerating} item={generationData}/>
                         } else {
-                            return <CardPlaceholder/>
+                            return <CardPlaceholder isPulsing={isGenerating}/>
                         }
                     })()}
 
