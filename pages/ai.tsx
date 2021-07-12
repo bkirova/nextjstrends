@@ -8,7 +8,7 @@ import { useState } from 'react'
 import imageAnalysisData from '../data/image_analysis.json'
 require('@tensorflow/tfjs-backend-cpu');
 require('@tensorflow/tfjs-backend-webgl');
-const cocoSsd = require('@tensorflow-models/coco-ssd');
+import cocoSsd from '@tensorflow-models/coco-ssd';
 
 export default function AI() {
   
@@ -21,7 +21,7 @@ export default function AI() {
     setImageData(getRandomAnalysis());
     setIsDragDropVisible(false);
 
-    const img = document.getElementById('img');
+    const img = document.getElementById('img') as HTMLImageElement;
     const model = await cocoSsd.load();
 
     drawImage(imageList[0].data_url);
@@ -70,7 +70,7 @@ export default function AI() {
       let randomboolean = Math.random() < 0.3;
 
       if(randomboolean) {
-        Array(randomNumber).fill().map((x,i)=>emojisRandom.push(e))
+        Array(randomNumber).fill("").map((x,i)=>emojisRandom.push(e))
       } else {
         emojisRandom.push(e)
       }
@@ -89,8 +89,8 @@ export default function AI() {
     };
   }
 
-  function drawImage(data_url) {
-    const canvas = document.getElementById("canvas");
+  function drawImage(data_url: string) {
+    const canvas = document.getElementById("canvas") as HTMLCanvasElement;
     const ctx = canvas.getContext("2d");
     
     var image = new Image();
@@ -127,7 +127,7 @@ export default function AI() {
     const width = prediction.bbox[2];
     const height = prediction.bbox[3];
     
-    const canvas = document.getElementById("canvas");
+    const canvas = document.getElementById("canvas") as HTMLCanvasElement;
     const ctx = canvas.getContext("2d");
 
     ctx.strokeStyle = `#${randomColor}`;

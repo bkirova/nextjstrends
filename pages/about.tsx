@@ -2,7 +2,7 @@ import Layout from '../components/layouts/Standard'
 
 export default function About() {
   return (
-    <Layout home>
+    <Layout>
       <div className="pt-20">
         <div className="min-w-full">
           <p className="text-3xl sm:text-5xl lg:text-6xl leading-none font-extrabold text-gray-800 tracking-tight mb-8">World-className IDE integration.</p>
