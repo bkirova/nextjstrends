@@ -1,12 +1,6 @@
-let colors = ['pink', 'yellow', 'purple', 'blue'];
+let colors = ['pink', 'pink', 'pink', 'yellow', 'purple', 'purple', 'blue','blue'];
 let sizes = [10, 24, 36];
 let positions = [
-    // {id: 0, top: '20', left: '20'},
-    // {id: 1, top: '1/4', left: '1/4'},
-    // {id: 2, top: '1/4', left: '1/2'},
-    // {id: 3, top: '2/3', right:'1/3'},
-    // {id: 4, top: '1/4', right:'1/2'},
-    
     {id: 3, top: '10', left:'10'},
     {id: 4, top: '10', right:'10'},
     
@@ -26,26 +20,8 @@ let positions = [
     {id: 5, top: '96', left: '1/4'}
 ];
 
-let positionsSideBar = [
-    {id: 0, top: '20', left: '20'},
-    {id: 1, top: '1/4', left: '1/4'},
-    {id: 2, top: '1/4', left: '1/2'},
-    {id: 3, top: '2/3', right:'1/3'},
-    {id: 4, top: '1/4', right:'1/2'},
-    {id: 5, top: '3/4', left: '2/3'},
-    {id: 3, top: '2/4', right:'1/4'},
-    {id: 4, top: '2/4', right:'1/2'},
-    {id: 5, top: '3/4', left: '1/3'}
-];
-
-// left-1/2	left: 50%;
-// left-1/3	left: 33.333333%;
-// left-2/3	left: 66.666667%;
-// left-1/4	left: 25%;
-// left-2/4	left: 50%;
-// left-3/4
-
 export function generateRandomDot() {
+    let randomOpacity = Math.floor(Math.random() * (0.7 - 0.4)) + 0.4;
     let randomScale = Math.floor(Math.random() * (2 - 1)) + 1;
     let randomDuration = Math.floor(Math.random() * (5 - 2)) + 2;
     let randomDelay = Math.floor(Math.random() * (6 - 1)) + 1;
@@ -55,7 +31,7 @@ export function generateRandomDot() {
 
     return {
         scale: randomScale,
-        opacity: 0.5,
+        opacity: randomOpacity,
         duration: randomDuration,
         delay: randomDelay,
         position: randomPosition,
