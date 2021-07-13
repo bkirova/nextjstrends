@@ -1,17 +1,28 @@
 let colors = ['pink', 'yellow', 'purple', 'blue'];
 let sizes = [10, 24, 36];
 let positions = [
-    {id: 1, top: 100, left: 20},
-    {id: 2, top: 0, left: 4},
-    {id: 3, top: 20, right:20},
-    {id: 4, top: 100, right:4},
-    {id: 5, top: 200, left: 40}
+    {id: 0, top: '20', left: '20'},
+    {id: 1, top: '1/4', left: '1/4'},
+    {id: 2, top: '1/4', left: '1/2'},
+    {id: 3, top: '2/3', right:'1/3'},
+    {id: 4, top: '1/4', right:'1/2'},
+    {id: 5, top: '3/4', left: '2/3'},
+    {id: 3, top: '2/4', right:'1/4'},
+    {id: 4, top: '2/4', right:'1/2'},
+    {id: 5, top: '3/4', left: '1/3'}
 ];
+
+// left-1/2	left: 50%;
+// left-1/3	left: 33.333333%;
+// left-2/3	left: 66.666667%;
+// left-1/4	left: 25%;
+// left-2/4	left: 50%;
+// left-3/4
 
 export function generateRandomDot() {
     let randomScale = Math.floor(Math.random() * (3 - 1)) + 1;
     let randomDuration = Math.floor(Math.random() * (5 - 2)) + 2;
-    let randomDelay = Math.floor(Math.random() * (4 - 1)) + 1;
+    let randomDelay = Math.floor(Math.random() * (6 - 1)) + 1;
     let randomColor = colors[Math.floor(Math.random()*colors.length)];
     let randomSize = sizes[Math.floor(Math.random()*sizes.length)];
     let randomPosition = positions[Math.floor(Math.random()*positions.length)];

@@ -16,6 +16,11 @@ export default function Standard({ children }) {
       <Dot options={generateRandomDot()}></Dot>
       <Dot options={generateRandomDot()}></Dot>
       <Dot options={generateRandomDot()}></Dot>
+      <Dot options={generateRandomDot()}></Dot>
+      <Dot options={generateRandomDot()}></Dot>
+      <Dot options={generateRandomDot()}></Dot>
+      <Dot options={generateRandomDot()}></Dot>
+      <Dot options={generateRandomDot()}></Dot>
 
       <Header/>
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
