@@ -31,12 +31,11 @@ export default function Home() {
                 </div>
             </div>
 
-            <div className="w-full mx-auto my-20 flex mx-auto px-4 md:w-10/12">
+            <div className="holder my-20 mx-auto w-12/12 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
                 <Card hasMargin={true} item={item1}/>
                 <Card hasMargin={true} item={item2}/>
                 <Card hasMargin={true} item={item3}/>
             </div>
-                        
         </div>
     </section>
     </Layout>

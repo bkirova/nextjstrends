@@ -1,7 +1,7 @@
 export default function Card(props: any) {
 
     return (
-        <div className={`text-gray-600 bg-white ${props.hasMargin ? 'mx-3' : ''}  rounded-lg flex flex-col shadow-2xl ${props.isPulsing ? 'animate-pulse opacity-40' : ''}`}>
+        <div className={`text-gray-600 bg-white ${props.hasMargin ? 'mx-3 mb-10' : ''}  rounded-lg flex flex-col shadow-2xl ${props.isPulsing ? 'animate-pulse opacity-40' : ''}`}>
             {(function() {
                 if (props.item) {
                     return <div>
