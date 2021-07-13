@@ -1,4 +1,4 @@
-export default function TrendItem(props) {
+export default function TrendItem() {
 
     return (
 		<div className="min-w-full pt-10">

@@ -1,17 +1,16 @@
-import Layout from '../components/layouts/about'
+import Layout from '../components/layouts/Standard'
+import Card from '../components/generated/Card'
+import {generateRandomAIPost} from '../utils/shared'
+
+let item1 = generateRandomAIPost()
+let item2 = generateRandomAIPost()
+let item3 = generateRandomAIPost()
 
 export default function Home() {
+
   return (
     <Layout>
       <section className="pt-24 bg-white">
-          <div className="absolute top-60 left-4 w-36 h-36 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-90 animate-pulse"></div>
-          <div className="absolute top-0 left-4 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-70"></div>
-
-          <div className="absolute top-0 right-4 w-36 h-36 bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse "></div>
-          <div className="absolute top-20 right-20 w-20 h-20 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-90 animate-pulse "></div>
-
-          <div className="absolute top-100 right-500 w-36 h-36 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse"></div>
-
         <div className="px-12 mx-auto max-w-7xl">
             <div className="w-full mx-auto text-left md:w-11/12 xl:w-9/12 md:text-center">
                 <h1 className="mb-8 text-4xl font-extrabold leading-none tracking-normal text-gray-900 md:text-6xl md:tracking-tight">
@@ -31,20 +30,13 @@ export default function Home() {
                     </a>
                 </div>
             </div>
-            <div className="w-full mx-auto mt-20 text-center md:w-10/12">
-                <div className="relative z-0 w-full mt-8">
-                    <div className="relative overflow-hidden shadow-2xl">
-                        <div className="flex items-center flex-none px-4 bg-blue-300 rounded-b-none h-11 rounded-xl">
-                            <div className="flex space-x-1.5">
-                                <div className="w-3 h-3 border-2 border-white rounded-full"></div>
-                                <div className="w-3 h-3 border-2 border-white rounded-full"></div>
-                                <div className="w-3 h-3 border-2 border-white rounded-full"></div>
-                            </div>
-                        </div>
-                        <img className="opacity-60" src="/images/posts.jpg"/>
-                    </div>
-                </div>
+
+            <div className="w-full mx-auto my-20 flex mx-auto px-4 md:w-10/12">
+                <Card hasMargin={true} item={item1}/>
+                <Card hasMargin={true} item={item2}/>
+                <Card hasMargin={true} item={item3}/>
             </div>
+                        
         </div>
     </section>
     </Layout>

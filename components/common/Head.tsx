@@ -1,14 +1,9 @@
 import Head from 'next/head'
-import Footer from '../common/Footer'
-import Header from '../common/Header'
-import SideBar from '../common/Sidebar'
 
-export const siteTitle = 'Next.js Sample Website'
+export const siteTitle = 'AI Stories'
 
-export default function Layout({ children }) {
-  return (
-    <div>
-      
+export default function Sidebar() {
+  return (      
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
@@ -24,17 +19,5 @@ export default function Layout({ children }) {
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      
-      <Header/>
-      <div className="flex flex-col w-full mx-auto px-4 lg:flex-row lg:max-w-7xl">
-        <aside className="lg:h-screen lg:sticky lg:top-0 lg:w-1/4">
-          <SideBar/>
-        </aside>
-        <div className="lg:w-3/4 ">
-          <main>{children}</main>
-        </div>
-      </div>
-      <Footer/>
-    </div>
-  )
+      )
 }

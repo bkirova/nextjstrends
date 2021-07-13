@@ -1,5 +1,6 @@
 export default function Footer() {
-    return (<footer className="footer bg-white relative">
+    return (
+        <footer className="footer bg-white relative">
             <div className="flex flex-col items-center">
                 <div className="sm:w-2/3 text-center py-4">
                     <p className="text-sm text-gray-700 font-bold mb-2 inline-flex items-center">
@@ -11,5 +12,6 @@ export default function Footer() {
                     </p>
                 </div>
             </div>
-    </footer>)
+        </footer>
+    )
 }
