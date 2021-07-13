@@ -49,7 +49,7 @@ export default function Generated() {
                 <div className="absolute top-100 right-500 w-36 h-36 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse"></div>
                 <div className="w-full relative space-y-4">
 
-                    <div className="p-5 bg-white rounded-lg flex items-center justify-between space-x-8 shadow-lg">
+                    <div className="p-5 bg-white rounded-lg flex items-center justify-between space-x-8 shadow-2xl">
                         <div className="flex-1 flex justify-between items-center">
                         <input className="w-full text-base mr-3 py-2 border-b border-gray-300 focus:outline-none focus:border-purple-500" type="" placeholder="type object, theme mood"/>
                         

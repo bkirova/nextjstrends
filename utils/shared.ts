@@ -1,6 +1,32 @@
 let colors = ['pink', 'yellow', 'purple', 'blue'];
 let sizes = [10, 24, 36];
 let positions = [
+    // {id: 0, top: '20', left: '20'},
+    // {id: 1, top: '1/4', left: '1/4'},
+    // {id: 2, top: '1/4', left: '1/2'},
+    // {id: 3, top: '2/3', right:'1/3'},
+    // {id: 4, top: '1/4', right:'1/2'},
+    
+    {id: 3, top: '10', left:'10'},
+    {id: 4, top: '10', right:'10'},
+    
+    {id: 3, top: '10', left:'1/4'},
+    {id: 4, top: '10', right:'1/4'},
+
+    {id: 5, top: '3/4', right: '1/4'},
+    {id: 5, top: '3/4', left: '1/4'},
+
+    {id: 3, top: '3/4', left:'20'},
+    {id: 4, top: '3/4', right:'20'},
+    
+    {id: 3, top: '80', left:'10'},
+    {id: 4, top: '80', right:'10'},
+
+    {id: 5, top: '96', right: '1/4'},
+    {id: 5, top: '96', left: '1/4'}
+];
+
+let positionsSideBar = [
     {id: 0, top: '20', left: '20'},
     {id: 1, top: '1/4', left: '1/4'},
     {id: 2, top: '1/4', left: '1/2'},
@@ -20,7 +46,7 @@ let positions = [
 // left-3/4
 
 export function generateRandomDot() {
-    let randomScale = Math.floor(Math.random() * (3 - 1)) + 1;
+    let randomScale = Math.floor(Math.random() * (2 - 1)) + 1;
     let randomDuration = Math.floor(Math.random() * (5 - 2)) + 2;
     let randomDelay = Math.floor(Math.random() * (6 - 1)) + 1;
     let randomColor = colors[Math.floor(Math.random()*colors.length)];
@@ -39,6 +65,7 @@ export function generateRandomDot() {
 }
 
 export function generateRandomAIPost() {  
+    let images = ['/images/1.jpg', '/images/2.jpg', '/images/3.jpg'];
     let emojis = ["🐕","🐾","🐩","🐶","🐕‍🦺","🦮"].sort( () => .5 - Math.random() );;
     let comments =  ["cool!!!", "This is amazing", "wow this looks great"];
     let userNames = ["bri_123", "sam_got_2", "jennie_smt", "dizzy_candy", "skol34", "hymy_jon"];
@@ -56,6 +83,7 @@ export function generateRandomAIPost() {
       tags: ['ai', 'devghoststories', 'aistories'],
       emojis: emojis.sort( () => 0.5 - Math.random()),
       commentUserName: userNames[Math.floor(Math.random()*userNames.length)],
-      comment: comments[Math.floor(Math.random()*comments.length)]
+      comment: comments[Math.floor(Math.random()*comments.length)],
+      image: images[Math.floor(Math.random()*images.length)],
     };
 }
