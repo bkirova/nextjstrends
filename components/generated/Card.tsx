@@ -1,4 +1,4 @@
-export default function Card(props) {
+export default function Card(props: any) {
 
     return (
         <div className={`bg-white rounded-lg flex flex-col shadow-lg ${props.isPulsing ? 'animate-pulse opacity-40' : ''}`}>

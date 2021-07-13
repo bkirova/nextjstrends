@@ -8,7 +8,7 @@ let positions = [
     {id: 5, top: 200, left: 40}
 ];
 
-let generateRandomDot = () => {
+export function generateRandomDot() {
     let randomScale = Math.floor(Math.random() * (3 - 1)) + 1;
     let randomDuration = Math.floor(Math.random() * (5 - 2)) + 2;
     let randomDelay = Math.floor(Math.random() * (4 - 1)) + 1;
@@ -27,7 +27,7 @@ let generateRandomDot = () => {
     }
 }
 
-function generateRandomAIPost() {  
+export function generateRandomAIPost() {  
     let emojis = ["🐕","🐾","🐩","🐶","🐕‍🦺","🦮"].sort( () => .5 - Math.random() );;
     let comments =  ["cool!!!", "This is amazing", "wow this looks great"];
     let userNames = ["bri_123", "sam_got_2", "jennie_smt", "dizzy_candy", "skol34", "hymy_jon"];
@@ -47,9 +47,4 @@ function generateRandomAIPost() {
       commentUserName: userNames[Math.floor(Math.random()*userNames.length)],
       comment: comments[Math.floor(Math.random()*comments.length)]
     };
-}
-
-module.exports = {
-    generateRandomDot,
-    generateRandomAIPost
 }

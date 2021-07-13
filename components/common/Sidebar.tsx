@@ -1,4 +1,4 @@
-export default function Sidebar(props) {
+export default function Sidebar() {
     return (
       <div className="flex lg:pt-40 pr-10">
         <ul className="flex flex-col w-full">
