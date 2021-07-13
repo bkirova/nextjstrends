@@ -2,7 +2,7 @@ import Head from 'next/head'
 
 export const siteTitle = 'AI Stories'
 
-export default function Sidebar({ children }) {
+export default function Sidebar() {
   return (      
       <Head>
         <link rel="icon" href="/favicon.ico" />
