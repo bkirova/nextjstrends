@@ -8,7 +8,7 @@ import { useState } from 'react'
 import imageAnalysisData from '../data/image_analysis.json'
 require('@tensorflow/tfjs-backend-cpu');
 require('@tensorflow/tfjs-backend-webgl');
-import cocoSsd from '@tensorflow-models/coco-ssd';
+import {load} from '@tensorflow-models/coco-ssd';
 
 export default function AI() {
   
@@ -22,7 +22,7 @@ export default function AI() {
     setIsDragDropVisible(false);
 
     const img = document.getElementById('img') as HTMLImageElement;
-    const model = await cocoSsd.load();
+    const model = await load();
 
     drawImage(imageList[0].data_url);
 
