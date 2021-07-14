@@ -1,12 +1,7 @@
 import Layout from '../components/layouts/Standard'
 import Card from '../components/generated/Card'
-import {generateRandomAIPost} from '../utils/shared'
 
-let item1 = generateRandomAIPost()
-let item2 = generateRandomAIPost()
-let item3 = generateRandomAIPost()
-
-export default function Home() {
+function Home({ items }) {
 
   return (
     <Layout>
@@ -32,12 +27,20 @@ export default function Home() {
             </div>
 
             <div className="holder my-20 mx-auto w-12/12 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-                <Card hasMargin={true} item={item1}/>
-                <Card hasMargin={true} item={item2}/>
-                <Card hasMargin={true} item={item3}/>
+                {items.map((item:Array<any>) => (
+                    <Card hasMargin={true} item={item}/>
+                ))}
             </div>
         </div>
     </section>
     </Layout>
   )
 }
+
+Home.getInitialProps = async (ctx) => {
+    const res = await fetch('http://localhost:3000/api/ai/latest')
+    const data = await res.json()
+  return { items: data }
+}
+
+export default Home
