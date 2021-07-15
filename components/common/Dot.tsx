@@ -6,7 +6,7 @@ export default function Dot() {
 
     return (
       <motion.div
-          className={`absolute top-${options.position.top} ${options.position.left ? 'left-' + options.position.left : 'right-' + options.position.right} w-${options.size} h-${options.size} bg-${options.color}-300 rounded-full mix-blend-multiply filter blur-lg`}
+          className={`z-0 fixed top-${options.position.top} ${options.position.left ? 'left-' + options.position.left : 'right-' + options.position.right} w-${options.size} h-${options.size} bg-${options.color}-300 rounded-full mix-blend-multiply filter blur-lg`}
           initial={{ scale: 1, opacity: 0 }}
           animate={{ scale: options.scale, opacity: options.opacity }}
           transition={{
