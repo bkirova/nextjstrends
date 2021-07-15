@@ -37,10 +37,10 @@ function Home({ items }) {
   )
 }
 
-Home.getInitialProps = async (ctx) => {
+Home.getInitialProps = async () => {
     const res = await fetch('https://aistoriesapi.vercel.app/api/ai/latest')
     const data = await res.json()
-  return { items: data }
+  return { items: data.items }
 }
 
 export default Home
