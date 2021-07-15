@@ -13,17 +13,7 @@ export default function Generated() {
 
     let index = 0;
 
-    let generateAPI = async function () {
-        // Call an external API endpoint to get posts.
-        // You can use any data fetching library
-        const res = await fetch('/api/ai/latest')
-        const data = await res.json()
-        
-        console.error(data)
-    }
-
     let generate = () => {
-        console.error(generateAPI())
         index = 0;
         setIsReady(false)
         setIsGenerating(true);
