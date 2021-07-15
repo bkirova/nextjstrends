@@ -24,14 +24,14 @@ export default function Card(props: any) {
                             <div className="pt-1">
                                 <div className="mb-2 text-sm">
                                 <span className="font-medium mr-2">{props.item.userName}</span> 
-                                    {props.item.emojis && props.item.emojis.map(emoji => (
-                                        <span>{emoji} </span>
+                                    {props.item.emojis && props.item.emojis.map((emoji, index) => (
+                                        <span key={index}>{emoji} </span>
                                     ))}
 
                                     {props.item.story}
 
-                                    {props.item.tags && props.item.tags.map(keyword => (
-                                        <span> #{keyword}</span>
+                                    {props.item.tags && props.item.tags.map((keyword, index) => (
+                                        <span key={keyword}> #{keyword}</span>
                                     ))}
                                 </div>
                             </div>
@@ -61,8 +61,6 @@ export default function Card(props: any) {
                     </div>
                 }
             })()}
-
         </div>
-            
     )
 }
