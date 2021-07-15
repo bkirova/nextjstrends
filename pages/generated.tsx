@@ -3,10 +3,10 @@ import dynamic from "next/dynamic";
 const Container = dynamic(() => import("../components/generated/Container"), {
   ssr: false,
 });
-export default function Generated(props) {
+export default function Generated() {
     return (
         <Layout>
-            <Container socket={props.socket}/>
+            <Container/>
         </Layout>
     ) 
 }
