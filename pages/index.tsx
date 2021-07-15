@@ -27,8 +27,8 @@ function Home({ items }) {
             </div>
 
             <div className="holder my-20 mx-auto w-12/12 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-                {items.map((item:Array<any>) => (
-                    <Card hasMargin={true} item={item}/>
+                {items.map((item:Array<any>, index) => (
+                    <Card key={index} hasMargin={true} item={item}/>
                 ))}
             </div>
         </div>

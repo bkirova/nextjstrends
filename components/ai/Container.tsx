@@ -208,8 +208,8 @@ export default function Container() {
                             <div className="mb-10">
                                 <h2 className="sm:text-lg sm:leading-snug font-bold tracking-wide uppercase text-gray-800 mb-2">keywords</h2>
 
-                                {imageData.keywords && imageData.keywords.map(keyword => (
-                                <span className="inline-block rounded-full text-white bg-black text-xs font-bold mr-1 mb-2 px-2 py-1 opacity-100">
+                                {imageData.keywords && imageData.keywords.map((keyword, index) => (
+                                <span key={index} className="inline-block rounded-full text-white bg-black text-xs font-bold mr-1 mb-2 px-2 py-1 opacity-100">
                                     {keyword}
                                 </span>
                                 ))}
@@ -217,13 +217,13 @@ export default function Container() {
 
                             <div className="mb-10">
                                 <h2 className="sm:text-lg sm:leading-snug font-bold tracking-wide uppercase text-gray-800 mb-2 mt-5">Vibes</h2> 
-                                {imageData.vibes && imageData.vibes.map(vibe => (
-                                <div className={`inline-block text-white bg-${vibe.sentiment}-400 text-xs font-bold mr-1 mb-2 px-2 py-1 opacity-100`}>
+                                {imageData.vibes && imageData.vibes.map((vibe, index) => (
+                                <div key={index} className={`inline-block text-white bg-${vibe.sentiment}-400 text-xs font-bold mr-1 mb-2 px-2 py-1 opacity-100`}>
                                     {vibe.value}
                                 </div>
                                 ))}
-                                {predictions.map((prediction) => (
-                                    <div className='inline-block text-xs font-bold mr-1 mb-2 px-2 py-1 opacity-100'>
+                                {predictions.map((prediction, index) => (
+                                    <div key={index} className='inline-block text-xs font-bold mr-1 mb-2 px-2 py-1 opacity-100'>
                                     {prediction.class},
                                     </div>
                                 ))}
@@ -231,24 +231,24 @@ export default function Container() {
 
                             <div className="mb-10">
                                 <h2 className="sm:text-lg sm:leading-snug font-bold tracking-wide uppercase text-gray-800 mb-2 mt-5">headlines</h2>
-                                {imageData.headlines && imageData.headlines.map(headline => (
-                                <p className="text-xl lg:text-2xl leading-none font-extrabold text-gray-600 mb-2">{headline}</p>
+                                {imageData.headlines && imageData.headlines.map((headline, index) => (
+                                <p key={index} className="text-xl lg:text-2xl leading-none font-extrabold text-gray-600 mb-2">{headline}</p>
                                 ))}
                             </div>
 
                             <div className="mb-10">
                                 <h2 className="sm:text-lg sm:leading-snug font-bold tracking-wide uppercase text-gray-800 mb-2 mt-5">emojis</h2>
                                 <p className="text-xl lg:text-2xl leading-none font-extrabold text-gray-800 tracking-tight mb-8">
-                                {imageData.emojis && imageData.emojis.map(emoji => (
-                                    <span>{emoji}</span>
+                                {imageData.emojis && imageData.emojis.map((emoji, index) => (
+                                    <span key={index}>{emoji}</span>
                                 ))}
                                 </p>
                             </div>
 
                             <div className="mb-10">
                                 <h2 className="sm:text-lg sm:leading-snug font-bold tracking-wide uppercase text-gray-800 mb-2">stories</h2>
-                                {imageData.stories && imageData.stories.map(story => (
-                                    <div className="text-xl text-gray-500 tracking-wide space-y-6 mb-6">{story}</div>
+                                {imageData.stories && imageData.stories.map((story, index) => (
+                                    <div key={index} className="text-xl text-gray-500 tracking-wide space-y-6 mb-6">{story}</div>
                                     // <div className="text-xl text-gray-500 tracking-wide space-y-6 mb-6">Worried about remembering all of <span className="font-extrabold text-pink-400">these</span> className names? The Tailwind CSS IntelliSense extension for <span className="font-extrabold text-pink-400">VS Code</span> has you covered.</div>
                                 ))}
                             </div>
