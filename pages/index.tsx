@@ -38,7 +38,7 @@ function Home({ items }) {
 }
 
 Home.getInitialProps = async (ctx) => {
-    const res = await fetch('http://localhost:3000/api/ai/latest')
+    const res = await fetch('https://ai.devghoststories.com/api/ai/latest')
     const data = await res.json()
   return { items: data }
 }
