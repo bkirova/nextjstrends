@@ -1,27 +1,20 @@
 import {motion} from 'framer-motion'
+import {generateRandomDot} from '../../utils/shared'
 
-export default function Dot(props:any) {
-  const variants = {
-    visible: { opacity: 1 },
-    hidden: { opacity: 0 },
-  }
+export default function Dot() {
+  let options = generateRandomDot()
+
     return (
       <motion.div
-      variants={variants}
-      transition={{
-        duration:props.options.duration
-      }}
-    >
-    <motion.div
-        className={`absolute top-${props.options.position.top} ${props.options.position.left ? 'left-' + props.options.position.left : 'right-' + props.options.position.right} w-${props.options.size} h-${props.options.size} bg-${props.options.color}-200 rounded-full mix-blend-multiply filter blur-lg`}
-        initial={{ scale: 1, opacity: 1 }}
-        animate={{ scale: props.options.scale, opacity: props.options.opacity }}
-        transition={{
-          repeat: Infinity, 
-          duration: props.options.duration,
-          delay: props.options.delay,
-          repeatType: "mirror",
-        }}
-    />
-    </motion.div>)
+          className={`z-0 fixed top-${options.position.top} ${options.position.left ? 'left-' + options.position.left : 'right-' + options.position.right} w-${options.size} h-${options.size} bg-${options.color}-300 rounded-full mix-blend-multiply filter blur-lg`}
+          initial={{ scale: 1, opacity: 0 }}
+          animate={{ scale: options.scale, opacity: options.opacity }}
+          transition={{
+            repeat: Infinity, 
+            duration: options.duration,
+            delay: options.delay,
+            repeatType: "mirror",
+          }}
+      />
+    )
 }
