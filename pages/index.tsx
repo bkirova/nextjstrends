@@ -1,11 +1,12 @@
 import Layout from '../components/layouts/Standard'
 import Card from '../components/generated/Card'
+import {motion} from 'framer-motion'
 
 function Home({ items }) {
 
   return (
     <Layout>
-      <section className="pt-24 bg-white">
+      <section className="pt-24">
         <div className="px-12 mx-auto max-w-7xl">
             <div className="w-full mx-auto text-left md:w-11/12 xl:w-9/12 md:text-center">
                 <h1 className="mb-8 text-4xl font-extrabold leading-none tracking-normal text-gray-900 md:text-6xl md:tracking-tight">

@@ -25,6 +25,7 @@ export default function Sidebar({ children }) {
       <Dot key={9}></Dot>
       <Dot key={10}></Dot>
 
+      <div className="relative z-1">
       <Header/>
       <div className="flex flex-col w-full mx-auto px-4 lg:flex-row lg:max-w-7xl">
         <aside className="lg:h-screen lg:sticky lg:top-0 lg:w-1/4">
@@ -35,6 +36,7 @@ export default function Sidebar({ children }) {
         </div>
       </div>
       <Footer/>
+      </div>
     </div>
   )
 }

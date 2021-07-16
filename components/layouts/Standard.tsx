@@ -24,11 +24,13 @@ export default function Standard({ children }) {
       <Dot key={9}></Dot>
       <Dot key={10}></Dot>
 
-      <Header/>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <main>{children}</main>
+      <div className="relative z-1">
+        <Header/>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+            <main>{children}</main>
+        </div>
+        <Footer/>
       </div>
-      <Footer/>
     </div>
   )
 }
