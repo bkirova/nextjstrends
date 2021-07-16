@@ -8,7 +8,7 @@ export default function Container() {
     let [isGenerating, setIsGenerating] = useState(false)
     
     let generate = () => {
-        const socket = io('http://localhost:9000')
+        const socket = io('https://aistories.herokuapp.com')
         setIsReady(false)
         setIsGenerating(true);
         setGenerationData(null)

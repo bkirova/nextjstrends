@@ -23,7 +23,7 @@ export default function Container() {
     let [randomPost, setRandomPost] = useState(generateRandomPost())
 
     let alanize = () => {
-        const socket = io('http://localhost:9000')
+        const socket = io('https://aistories.herokuapp.com')
     
         socket.emit("analize", "world");
 
