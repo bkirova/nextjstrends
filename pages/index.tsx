@@ -1,6 +1,10 @@
 import Layout from '../components/layouts/Standard'
 import Card from '../components/generated/Card'
 import {motion} from 'framer-motion'
+import dynamic from "next/dynamic";
+const Container = dynamic(() => import("../components/index/Container"), {
+  ssr: false,
+});
 
 function Home({ items }) {
 
@@ -33,18 +37,8 @@ function Home({ items }) {
                 </div>
             </motion.div>
 
-            <motion.div 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{
-                duration: 0.5,
-                delay: 0.5
-            }}
-            className="holder my-20 mx-auto w-12/12 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-                {items.map((item:Array<any>, index) => (
-                    <Card key={index} hasMargin={true} item={item}/>
-                ))}
-            </motion.div>
+            <Container items={items} />
+
         </div>
     </section>
     </Layout>

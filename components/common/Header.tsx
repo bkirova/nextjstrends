@@ -4,7 +4,7 @@ export default function Menu() {
   const [menuOpen, setMenuOpen] = React.useState(false);
   return (
     <>
-      <div className="flex flex-wrap py-2">
+      <div className="flex flex-wrap">
         <div className="w-full px-2">
           <nav className="relative flex flex-wrap items-center justify-between px-2 py-3 rounded">
             <div className="container mx-auto flex flex-wrap items-center justify-between">
