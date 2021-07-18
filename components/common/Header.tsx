@@ -32,14 +32,14 @@ export default function Menu() {
                 }
               >
                 <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
-                  <li className="nav-item">
+                  {/* <li className="nav-item">
                     <a
                       className="px-3 py-2 text-base font-medium text-gray-500 hover:text-gray-900 items-center inline-flex"
                       href="/trends"
                     >
                       Trends
                     </a>
-                  </li>
+                  </li> */}
                   <li className="nav-item">
                     <a
                       className="px-3 py-2 text-base font-medium text-gray-500 hover:text-gray-900 items-center inline-flex"
@@ -48,7 +48,7 @@ export default function Menu() {
                       AI Generated
                     </a>
                   </li>
-                  <li className="nav-item">
+                  {/* <li className="nav-item">
                     <a
                       className="px-3 py-2 text-base font-medium text-gray-500 hover:text-gray-900 items-center inline-flex"
                       href="/ai"
@@ -59,7 +59,7 @@ export default function Menu() {
                       </svg> 
                       <span className="pl-1">AI</span>
                     </a>
-                  </li>
+                  </li> */}
                   <li className="nav-item">
                     <a
                       className="px-3 py-2 text-base font-medium text-gray-500 hover:text-gray-900 items-center inline-flex"

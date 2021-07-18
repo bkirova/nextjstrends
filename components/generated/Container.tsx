@@ -1,6 +1,7 @@
 import Card from './Card'
 import io from 'socket.io-client'
 import { useState } from 'react'
+import {motion} from 'framer-motion'
 
 export default function Container() {
     let [generationData, setGenerationData] = useState(null)
@@ -40,7 +41,13 @@ export default function Container() {
                 <div className="absolute top-20 right-20 w-20 h-20 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-90 animate-pulse "></div>
                 <div className="absolute top-100 right-500 w-36 h-36 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse"></div>
 
-                <div className="w-full relative space-y-4">
+                <motion.div  
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{
+                    duration: 0.3
+                }}
+                className="w-full relative space-y-4">
 
                     <div className="p-5 bg-white rounded-lg flex items-center justify-between space-x-8 shadow-2xl">
                         <div className="flex-1 flex justify-between items-center">
@@ -57,7 +64,7 @@ export default function Container() {
                     <button type="button" onClick={() => preview()} className={` ${isReady ? '' : 'hidden'} p-2 float-right bg-blue-300 hover:bg-blue-400 focus:ring-blue-400 focus:ring-offset-blue-200 text-white transition ease-in duration-200 text-center text-base font-semibold focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg`}>
                         Preview Generations
                     </button>
-                </div>
+                </motion.div>
             </div>
         </div>
     ) 
