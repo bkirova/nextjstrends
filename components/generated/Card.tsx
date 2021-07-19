@@ -2,7 +2,7 @@ import { motion, AnimatePresence } from "framer-motion"
 export default function Card(props: any) {
 
     return (
-        <div className={`text-gray-600 bg-white ${props.hasMargin ? 'mx-3 mb-10' : ''}  rounded-lg flex flex-col shadow-2xl`}>
+        <div className={`text-gray-600 bg-white ${props.hasMargin ? 'mx-3 mb-10' : ''} rounded-lg flex flex-col shadow-2xl`}>
             {props.item && (
                 <AnimatePresence exitBeforeEnter>
                     <motion.div
@@ -28,7 +28,7 @@ export default function Card(props: any) {
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
-                            transition={{ duration: 0.5}}
+                            transition={{ duration: 1}}
                             />
                         </AnimatePresence>
                         <div className="h-44">

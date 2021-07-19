@@ -49,7 +49,7 @@ export default function Container() {
                 }}
                 className="w-full relative space-y-4">
 
-                    <div className="p-5 bg-white rounded-lg flex items-center justify-between space-x-8 shadow-2xl">
+                    <div className={`p-5 ${isGenerating ? 'opacity-40' : ''} bg-white rounded-lg flex items-center justify-between space-x-8 shadow-2xl`}>
                         <div className="flex-1 flex justify-between items-center">
                         <input className="w-full text-base mr-3 py-2 border-b border-gray-300 focus:outline-none focus:border-purple-500" type="" placeholder="type object, theme mood"/>
                         
@@ -59,7 +59,7 @@ export default function Container() {
                         </div>
                     </div>
 
-                    <Card isPulsing={isGenerating} item={generationData}/>
+                    <Card isGenerating={isGenerating} item={generationData}/>
 
                     <button type="button" onClick={() => preview()} className={` ${isReady ? '' : 'hidden'} p-2 float-right bg-blue-300 hover:bg-blue-400 focus:ring-blue-400 focus:ring-offset-blue-200 text-white transition ease-in duration-200 text-center text-base font-semibold focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg`}>
                         Preview Generations

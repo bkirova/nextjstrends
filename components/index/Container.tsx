@@ -6,44 +6,41 @@ export default function Container(props) {
 
     let [text, setText] = useState('')
     let [generationData, setGenerationData] = useState(null)
+    let [isGenerating, setIsGenerating] = useState(false)
+    let [isButtonClicked, setIsButtonClicked] = useState(false)
+
     const buttonRef= useRef(null);
     
-    let generate = () => {
-        const interval = setInterval(() => {
-            console.error(`generate data`);
-            let randomItem = props.items[Math.floor(Math.random()*props.items.length)];
-            setGenerationData(randomItem)
-          }, 1000);
-        
-          return () => {
-            console.error(`clearing interval`);
-            clearInterval(interval);
-          };
-    }
-
     useEffect(() => {
-        setTimeout(() => {
-            let text = 'Funny happi dogs'
-            let acc = '';
-            for (let i = 0; i < text.length; i++) {
-                acc += text[i]
-                setText(acc)
-            }
-            buttonRef.current.click();
-        }, 1000)
+        let text = ['F', 'u', 'n', 'n', 'y', ' ', 'd', 'o', 'g', 's']
+        let acc = '';
+        let i = 0;
 
-        const interval = setInterval(() => {
-            console.error(`generate data`);
+        const generate = () => {
+            setIsGenerating(true);
             let randomItem = props.items[Math.floor(Math.random()*props.items.length)];
             setGenerationData(randomItem)
-          }, 3000);
-        
-          return () => {
-            console.error(`clearing interval`);
-            clearInterval(interval);
-          };
+        }
 
-        
+        setTimeout(() => {
+            const interval = setInterval(() => {
+                if(text[i]) {
+                    acc += text[i]
+                    setText(acc)
+                    i+=1
+                } else {
+                    setIsButtonClicked(true)
+                    setTimeout(() => {
+                        setIsButtonClicked(false)
+                        setTimeout(() => {
+                            generate()
+                        }, 300)
+                    }, 500)
+                    clearInterval(interval);
+                    setInterval(() => generate(), 3000);
+                }
+            }, 100);
+        }, 500);
     }, []);
 
     return (
@@ -64,17 +61,17 @@ export default function Container(props) {
                 }}
                 className="w-full relative space-y-4">
 
-                    <div className="p-5 bg-white rounded-lg flex items-center justify-between space-x-8 shadow-2xl">
+                    <div className={`p-5 ${isGenerating ? 'opacity-40' : ''} bg-white rounded-lg flex items-center justify-between space-x-8 shadow-2xl`}>
                         <div className="flex-1 flex justify-between items-center">
                         <input className="w-full text-base mr-3 py-2 border-b border-gray-300 focus:outline-none focus:border-purple-500" onChange={() => {}} type="" placeholder="type object, theme mood" value={text}/>
                         
-                        <button type="button" ref={buttonRef} onClick={() => {}} className="p-2 bg-purple-300 hover:bg-purple-400 focus:ring-purple-400 focus:ring-offset-purple-200 text-white transition ease-in duration-200 text-center text-base font-semibold focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg ">
+                        <button type="button" ref={buttonRef} onClick={() => {}} className={`p-2 bg-purple-300 ${isButtonClicked ? 'bg-purple-600' : ''} hover:bg-purple-400 focus:ring-purple-400 focus:ring-offset-purple-200 text-white transition ease-in duration-200 text-center text-base font-semibold focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg `}>
                             Generate
                         </button>
                         </div>
                     </div>
 
-                    <Card item={generationData}/>
+                    <Card isGenerating={isGenerating} item={generationData}/>
 
                 </motion.div>
             </div>
