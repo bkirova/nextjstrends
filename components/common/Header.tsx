@@ -4,7 +4,7 @@ export default function Menu() {
   const [menuOpen, setMenuOpen] = React.useState(false);
   return (
     <>
-      <div className="flex flex-wrap py-2">
+      <div className="flex flex-wrap">
         <div className="w-full px-2">
           <nav className="relative flex flex-wrap items-center justify-between px-2 py-3 rounded">
             <div className="container mx-auto flex flex-wrap items-center justify-between">
@@ -32,23 +32,23 @@ export default function Menu() {
                 }
               >
                 <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
-                  <li className="nav-item">
+                  {/* <li className="nav-item">
                     <a
                       className="px-3 py-2 text-base font-medium text-gray-500 hover:text-gray-900 items-center inline-flex"
                       href="/trends"
                     >
                       Trends
                     </a>
-                  </li>
+                  </li> */}
                   <li className="nav-item">
                     <a
-                      className="px-3 py-2 text-base font-medium text-gray-500 hover:text-gray-900 items-center inline-flex"
+                      className="px-3 py-2 text-base font-medium text-gray-700 hover:text-gray-900 items-center inline-flex"
                       href="/generated"
                     >
-                      AI Generated
+                      AI
                     </a>
                   </li>
-                  <li className="nav-item">
+                  {/* <li className="nav-item">
                     <a
                       className="px-3 py-2 text-base font-medium text-gray-500 hover:text-gray-900 items-center inline-flex"
                       href="/ai"
@@ -59,7 +59,7 @@ export default function Menu() {
                       </svg> 
                       <span className="pl-1">AI</span>
                     </a>
-                  </li>
+                  </li> */}
                   <li className="nav-item">
                     <a
                       className="px-3 py-2 text-base font-medium text-gray-500 hover:text-gray-900 items-center inline-flex"

@@ -15,6 +15,14 @@ a {
   box-sizing: border-box;
 }
 
+
+.custom-image {
+  width: 100% !important;
+  min-width: 300px !important;
+  height: 300px;
+  object-fit: cover;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

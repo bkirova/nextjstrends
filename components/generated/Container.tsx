@@ -1,8 +1,10 @@
 import Card from './Card'
 import io from 'socket.io-client'
 import { useState } from 'react'
+import {motion} from 'framer-motion'
 
 export default function Container() {
+    let [generatedData, setGeneratedData] = useState([])
     let [generationData, setGenerationData] = useState(null)
     let [isReady, setIsReady] = useState(false)
     let [isGenerating, setIsGenerating] = useState(false)
@@ -18,6 +20,8 @@ export default function Container() {
         socket.on('generate_update', (data) => {
             console.log('generate_update', data)
             setGenerationData(data)
+            generatedData.push(data)
+            setGeneratedData(generatedData);
         })
 
         socket.on('generate_ready', (data) => {
@@ -28,10 +32,8 @@ export default function Container() {
         })
     }
 
-    let preview = () => {}
-
     return (
-        <div className="mt-10 mb-10 flex items-center justify-center">
+        <div className="mt-10 mb-10 flex flex-col items-center justify-center">
             <div className="relative w-full max-w-lg">
 
                 <div className="absolute top-60 left-4 w-36 h-36 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-90 animate-pulse"></div>
@@ -40,25 +42,38 @@ export default function Container() {
                 <div className="absolute top-20 right-20 w-20 h-20 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-90 animate-pulse "></div>
                 <div className="absolute top-100 right-500 w-36 h-36 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse"></div>
 
-                <div className="w-full relative space-y-4">
+                <motion.div  
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{
+                    duration: 0.3
+                }}
+                className="w-full relative space-y-4">
 
-                    <div className="p-5 bg-white rounded-lg flex items-center justify-between space-x-8 shadow-2xl">
+                    <div className={`p-5 ${isGenerating ? 'opacity-30' : ''} bg-white rounded-lg flex items-center justify-between space-x-8 shadow`}>
                         <div className="flex-1 flex justify-between items-center">
-                        <input className="w-full text-base mr-3 py-2 border-b border-gray-300 focus:outline-none focus:border-purple-500" type="" placeholder="type object, theme mood"/>
+                        <input className="w-full text-base mr-3 py-2 border-b border-gray-300 focus:outline-none focus:border-purple-500" type="" placeholder="Funny cute dogs"/>
                         
-                        <button type="button" onClick={() => generate()} className="p-2 bg-purple-300 hover:bg-purple-400 focus:ring-purple-400 focus:ring-offset-purple-200 text-white transition ease-in duration-200 text-center text-base font-semibold focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg ">
+                        <button type="button" onClick={() => generate()} className="p-2 bg-purple-400 hover:bg-purple-300 text-white text-center text-base font-semibold rounded-lg">
                             Generate
                         </button>
                         </div>
                     </div>
 
-                    <Card isPulsing={isGenerating} item={generationData}/>
+                    <div className={`${isReady ? 'hidden' : ''}`}>
+                    <Card isGenerating={isGenerating} item={generationData}/>
+                    </div>
+                </motion.div>
 
-                    <button type="button" onClick={() => preview()} className={` ${isReady ? '' : 'hidden'} p-2 float-right bg-blue-300 hover:bg-blue-400 focus:ring-blue-400 focus:ring-offset-blue-200 text-white transition ease-in duration-200 text-center text-base font-semibold focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg`}>
-                        Preview Generations
-                    </button>
+            </div>
+            <div className={`${isReady ? '' : 'hidden'} flex flex-col items-center mt-20`}>
+                <div className="swiper flex overflow-x-scroll w-2/3">
+                    {generatedData.map((item:Array<any>, index) => (
+                        <Card key={index} hasMargin={true} item={item}/>
+                    ))}
                 </div>
             </div>
+                
         </div>
     ) 
 }

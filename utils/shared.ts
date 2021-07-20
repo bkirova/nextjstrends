@@ -21,7 +21,7 @@ let positions = [
 ];
 
 export function generateRandomDot() {
-    let randomOpacity = Math.floor(Math.random() * (0.9 - 0.5)) + 0.5;
+    let randomOpacity = Math.floor(Math.random() * (0.9 - 0.7)) + 0.7;
     let randomScale = Math.floor(Math.random() * (2 - 1)) + 1;
     let randomDuration = Math.floor(Math.random() * (5 - 2)) + 2;
     let randomDelay = Math.floor(Math.random() * (6 - 1)) + 1;

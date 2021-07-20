@@ -1,5 +1,5 @@
 
-import Layout from '../components/layouts/Sidebar'
+import Layout from '../components/layouts/Standard'
 import TrendItem from '../components/trends/TrendItem'
 
 export default function Trends() {
