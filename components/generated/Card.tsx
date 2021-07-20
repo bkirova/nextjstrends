@@ -2,7 +2,7 @@ import { motion, AnimatePresence } from "framer-motion"
 export default function Card(props: any) {
 
     return (
-        <div className={`text-gray-600 bg-white ${props.hasMargin ? 'mx-3 mb-10' : ''} rounded-lg flex flex-col shadow-2xl`}>
+        <div className={`inline-block text-gray-600 bg-white ${props.hasMargin ? 'mx-3 mb-10' : ''} rounded-lg flex flex-col shadow`}>
             {props.item && (
                 <AnimatePresence exitBeforeEnter>
                     <motion.div
@@ -22,7 +22,7 @@ export default function Card(props: any) {
 
                         <AnimatePresence exitBeforeEnter>
                             <motion.img
-                            className='object-cover h-72 w-full'
+                            className='custom-image'
                             key={props.item.image}
                             src={props.item.image}
                             initial={{ opacity: 0 }}
@@ -75,7 +75,7 @@ export default function Card(props: any) {
                             <div data-placeholder className="h-5 w-40 bg-gray-200"></div>
                         </div>
 
-                        <div data-placeholder className='h-72 w-full bg-gray-200'></div>
+                        <div data-placeholder className='custom-image bg-gray-200'></div>
                         
                         <div className="h-44">
                             <div className="p-3">
