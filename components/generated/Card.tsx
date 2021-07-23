@@ -2,13 +2,15 @@ import { motion, AnimatePresence } from "framer-motion"
 export default function Card(props: any) {
 
     return (
-        <div className={`inline-block text-gray-600 bg-white ${props.hasMargin ? 'mx-3 mb-10' : ''} rounded-lg flex flex-col shadow`}>
-            {props.item && (
-                <AnimatePresence exitBeforeEnter>
+        <div className={`inline-block text-gray-600 bg-white ${props.hasMargin ? 'mx-3 mb-10' : ''} rounded-lg flex flex-col custom-shadow`}>
+            <AnimatePresence exitBeforeEnter>
+                {
+                    props.item ? (
                     <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
+                    key="expanded"
                     >
                         <div className="w-full flex justify-between p-3 h-14">
                             <div className="flex">
@@ -60,15 +62,12 @@ export default function Card(props: any) {
                             </div>
                         </div>
                     </motion.div>
-                </AnimatePresence>
-            )}
-                
-            {!props.item && (
-                <AnimatePresence exitBeforeEnter>
+                    ) : (
                     <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
+                    key="collapsed"
                     >
                         <div className="flex items-center p-3 h-14">
                             <div data-placeholder className="h-8 w-8 mr-2 rounded-full bg-gray-200"></div>
@@ -86,8 +85,9 @@ export default function Card(props: any) {
                             </div>
                         </div>
                 </motion.div>
+                    )
+                }
             </AnimatePresence>
-            )}
         </div>
     )
 }

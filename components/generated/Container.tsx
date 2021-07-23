@@ -1,14 +1,15 @@
 import Card from './Card'
 import io from 'socket.io-client'
 import { useState } from 'react'
-import {motion} from 'framer-motion'
+import {motion, useAnimation} from 'framer-motion'
 
 export default function Container() {
     let [generatedData, setGeneratedData] = useState([])
     let [generationData, setGenerationData] = useState(null)
     let [isReady, setIsReady] = useState(false)
     let [isGenerating, setIsGenerating] = useState(false)
-    
+    const controls = useAnimation();
+
     let generate = () => {
         const socket = io('https://aistories.herokuapp.com')
         setIsReady(false)
@@ -16,7 +17,6 @@ export default function Container() {
         setGenerationData(null)
 
         socket.emit("generate", "world");
-
         socket.on('generate_update', (data) => {
             console.log('generate_update', data)
             setGenerationData(data)
@@ -28,6 +28,10 @@ export default function Container() {
             console.log('generated ready', data)
             setIsReady(true)
             setIsGenerating(false)
+            controls.start({
+                scale: 1.1,
+                transition: { duration: 2 }
+              });
             socket.disconnect()
         })
     }
@@ -43,35 +47,29 @@ export default function Container() {
                 <div className="absolute top-100 right-500 w-36 h-36 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse"></div>
 
                 <motion.div  
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{
-                    duration: 0.3
-                }}
+                animate={controls}
+                // initial={{ opacity: 0 }}
+                // animate={{ opacity: 1 }}
+                // transition={{
+                //     duration: 0.5,
+                //     delay: 0.1
+                // }}
                 className="w-full relative space-y-4">
 
-                    <div className={`p-5 ${isGenerating ? 'opacity-30' : ''} bg-white rounded-lg flex items-center justify-between space-x-8 shadow`}>
+                    <div className={`p-5 ${isGenerating ? 'opacity-30' : ''} bg-white rounded-lg flex items-center justify-between space-x-8 custom-shadow`}>
                         <div className="flex-1 flex justify-between items-center">
-                        <input className="w-full text-base mr-3 py-2 border-b border-gray-300 focus:outline-none focus:border-purple-500" type="" placeholder="Funny cute dogs"/>
+                        <input disabled={isGenerating} className="w-full text-base mr-3 py-2 border-b border-gray-300 focus:outline-none focus:border-purple-500" type="" placeholder="Funny cute dogs"/>
                         
-                        <button type="button" onClick={() => generate()} className="p-2 bg-purple-400 hover:bg-purple-300 text-white text-center text-base font-semibold rounded-lg">
+                        <button type="button" onClick={() => generate()} disabled={isGenerating} className="p-2 bg-purple-400 text-white text-center text-base font-semibold rounded-lg">
                             Generate
                         </button>
                         </div>
                     </div>
 
-                    <div className={`${isReady ? 'hidden' : ''}`}>
+                    <div>
                     <Card isGenerating={isGenerating} item={generationData}/>
                     </div>
                 </motion.div>
-
-            </div>
-            <div className={`${isReady ? '' : 'hidden'} flex flex-col items-center mt-20`}>
-                <div className="swiper flex overflow-x-scroll w-2/3">
-                    {generatedData.map((item:Array<any>, index) => (
-                        <Card key={index} hasMargin={true} item={item}/>
-                    ))}
-                </div>
             </div>
                 
         </div>
