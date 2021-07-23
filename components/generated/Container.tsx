@@ -46,11 +46,12 @@ export default function Container() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{
-                    duration: 0.3
+                    duration: 0.5,
+                    delay: 0.1
                 }}
                 className="w-full relative space-y-4">
 
-                    <div className={`p-5 ${isGenerating ? 'opacity-30' : ''} bg-white rounded-lg flex items-center justify-between space-x-8 shadow`}>
+                    <div className={`p-5 ${isGenerating ? 'opacity-30' : ''} bg-white rounded-lg flex items-center justify-between space-x-8 custom-shadow`}>
                         <div className="flex-1 flex justify-between items-center">
                         <input className="w-full text-base mr-3 py-2 border-b border-gray-300 focus:outline-none focus:border-purple-500" type="" placeholder="Funny cute dogs"/>
                         
@@ -60,18 +61,10 @@ export default function Container() {
                         </div>
                     </div>
 
-                    <div className={`${isReady ? 'hidden' : ''}`}>
+                    <div>
                     <Card isGenerating={isGenerating} item={generationData}/>
                     </div>
                 </motion.div>
-
-            </div>
-            <div className={`${isReady ? '' : 'hidden'} flex flex-col items-center mt-20`}>
-                <div className="swiper flex overflow-x-scroll w-2/3">
-                    {generatedData.map((item:Array<any>, index) => (
-                        <Card key={index} hasMargin={true} item={item}/>
-                    ))}
-                </div>
             </div>
                 
         </div>
