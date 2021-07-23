@@ -2,7 +2,7 @@ import { motion, AnimatePresence } from "framer-motion"
 export default function Card(props: any) {
 
     return (
-        <div className={`inline-block text-gray-600 bg-white ${props.hasMargin ? 'mx-3 mb-10' : ''} ${props.isGenerating ? 'animate-pulse' : ''} rounded-lg flex flex-col custom-shadow`}>
+        <div className={`inline-block text-gray-600 bg-white ${props.hasMargin ? 'mx-3 mb-10' : ''} rounded-lg flex flex-col custom-shadow`}>
             <AnimatePresence exitBeforeEnter>
                 {
                     props.item ? (
