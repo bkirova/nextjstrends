@@ -28,6 +28,24 @@ a {
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
 }
 
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  display: flex;
+  align-items: center;
+  width: 300px;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

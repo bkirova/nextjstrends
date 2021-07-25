@@ -1,4 +1,5 @@
 import { motion, AnimatePresence } from "framer-motion"
+
 export default function Card(props: any) {
 
     return (
@@ -21,18 +22,24 @@ export default function Card(props: any) {
                             </div>
                             <span className="px-2 hover:bg-gray-300 cursor-pointer rounded"><i className="fas fa-ellipsis-h pt-2 text-lg"></i></span>
                         </div>
-
-                        <AnimatePresence exitBeforeEnter>
-                            <motion.img
-                            className='custom-image'
-                            key={props.item.image}
-                            src={props.item.image}
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
-                            transition={{ duration: 1}}
-                            />
-                        </AnimatePresence>
+                        <div className="relative">
+                            <AnimatePresence exitBeforeEnter>
+                                <motion.img
+                                className='custom-image'
+                                key={props.item.image}
+                                src={props.item.image}
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                exit={{ opacity: 0 }}
+                                transition={{ duration: 1}}
+                                />
+                            </AnimatePresence>
+                            {props.isReady && (
+                                <div onClick={() => props.handlePreview()} className="absolute bottom-0 w-full bg-opacity-50 hover:bg-opacity-60 hover:text-opacity-80 cursor-pointer p-3 bg-black text-white text-center font-semibold text-2xl">
+                                    <span>Preview Generations</span>
+                                </div>
+                            )}
+                        </div>
                         <div className="h-44">
                             <div className="p-3">
                                 <div className="h-4">

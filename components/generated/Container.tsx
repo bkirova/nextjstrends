@@ -2,6 +2,11 @@ import Card from './Card'
 import io from 'socket.io-client'
 import { useState } from 'react'
 import {motion, useAnimation} from 'framer-motion'
+import { Swiper, SwiperSlide } from "swiper/react";
+import SwiperCore, {Pagination, Navigation} from 'swiper/core';
+
+SwiperCore.use([Pagination, Navigation]);
+
 
 export default function Container() {
     let [generatedData, setGeneratedData] = useState([])
@@ -29,11 +34,15 @@ export default function Container() {
             setIsReady(true)
             setIsGenerating(false)
             controls.start({
-                scale: 1.1,
-                transition: { duration: 2 }
+                scale: [1.1, 1],
+                transition: { duration: 1 }
               });
             socket.disconnect()
         })
+    }
+    
+    let handlePreview = () => {
+        console.error('handle preview')
     }
 
     return (
@@ -67,11 +76,24 @@ export default function Container() {
                     </div>
 
                     <div>
-                    <Card isGenerating={isGenerating} item={generationData}/>
+                    <Card isGenerating={isGenerating} isReady={isReady} item={generationData} handlePreview={handlePreview}/>
                     </div>
                 </motion.div>
             </div>
-                
+            {/* <div className="mt-10 max-w-2xl">
+            <Swiper slidesPerView={3} spaceBetween={30} slidesPerGroup={3} navigation={true} className="mySwiper">
+                {generatedData.map((item:Array<any>, index) => (
+                        <SwiperSlide>
+                            <Card key={index} hasMargin={true} item={item}/>
+                            <img
+                            className='custom-image'
+                            key={item.image}
+                            src={item.image}
+                            />
+                        </SwiperSlide>
+                    ))}
+            </Swiper>
+            </div> */}
         </div>
     ) 
 }
