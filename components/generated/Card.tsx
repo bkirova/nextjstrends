@@ -34,11 +34,11 @@ export default function Card(props: any) {
                                 transition={{ duration: 1}}
                                 />
                             </AnimatePresence>
-                            {props.isReady && (
+                            {/* {props.isReady && (
                                 <div onClick={() => props.handlePreview()} className="absolute bottom-0 w-full bg-opacity-50 hover:bg-opacity-60 hover:text-opacity-80 cursor-pointer p-3 bg-black text-white text-center font-semibold text-2xl">
                                     <span>Preview Generations</span>
                                 </div>
-                            )}
+                            )} */}
                         </div>
                         <div className="h-44">
                             <div className="p-3">

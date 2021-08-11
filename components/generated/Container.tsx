@@ -19,7 +19,8 @@ export default function Container() {
         const socket = io('https://aistories.herokuapp.com')
         setIsReady(false)
         setIsGenerating(true);
-        setGenerationData(null)
+        setGenerationData(null);
+        setGeneratedData([]);
 
         socket.emit("generate", "world");
         socket.on('generate_update', (data) => {
@@ -33,10 +34,10 @@ export default function Container() {
             console.log('generated ready', data)
             setIsReady(true)
             setIsGenerating(false)
-            controls.start({
-                scale: [1.1, 1],
-                transition: { duration: 1 }
-              });
+            // controls.start({
+            //     scale: [1.1, 1],
+            //     transition: { duration: 1 }
+            //   });
             socket.disconnect()
         })
     }
@@ -74,10 +75,31 @@ export default function Container() {
                         </button>
                         </div>
                     </div>
-
+                    
                     <div>
-                    <Card isGenerating={isGenerating} isReady={isReady} item={generationData} handlePreview={handlePreview}/>
+                        <Card isGenerating={isGenerating} isReady={isReady} item={generationData} handlePreview={handlePreview}/>
                     </div>
+
+                    {
+                        generatedData.length>0 ? (
+                            <div>
+                                <p className="mb-3 text-lg font-medium text-gray-600">
+                                    Generations
+                                </p>
+                                <div className="bg-white flex overflow-x-auto custom-shadow rounded-lg"> 
+                                    {generatedData.map((item:Array<any>, index) => (
+                                        <img key={index} src={item.image} alt="" className="w-60 h-60 py-3 pl-3"/>
+                                    ))}
+                                </div>
+                            </div>
+                        ) : (
+                            <div>
+                                <div data-placeholder className="h-8 w-60 mb-3 bg-gray-200"></div>
+                                <div data-placeholder className='bg-white w-full h-60 custom-shadow'></div>
+                            </div>
+                        ) 
+                    }
+                    
                 </motion.div>
             </div>
             {/* <div className="mt-10 max-w-2xl">
