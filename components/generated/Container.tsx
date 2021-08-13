@@ -95,7 +95,7 @@ export default function Container() {
                         ) : (
                             <div>
                                 <div data-placeholder className="h-8 w-60 mb-3 bg-gray-200"></div>
-                                <div data-placeholder className='bg-white w-full h-60 custom-shadow'></div>
+                                <div data-placeholder className='bg-white w-full h-60 custom-shadow rounded-lg'></div>
                             </div>
                         ) 
                     }
