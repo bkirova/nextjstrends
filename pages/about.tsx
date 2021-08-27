@@ -2,7 +2,10 @@ import Layout from '../components/layouts/Standard'
 
 export default function About() {
   return (
-    <Layout>        
+    <Layout>
+       <div className="contenair bg-cover min-h-screen w-full flex justify-center items-center">
+  
+  <div className="bg-white p-5 rounded-2xl bg-opacity-60 backdrop-filter backdrop-blur-lg">     
       <div className="pt-20">
         <div className="px-3 mx-auto max-w-7xl">
           <p className="text-3xl sm:text-5xl lg:text-6xl leading-none font-extrabold text-gray-800 tracking-tight mb-8">What is AI Stories?</p>
@@ -30,6 +33,7 @@ export default function About() {
           <br/><br/><br/><br/><br/>
         </div>
       </div>
+      </div></div>
     </Layout>
   )
 }

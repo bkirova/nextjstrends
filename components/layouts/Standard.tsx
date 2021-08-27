@@ -12,6 +12,16 @@ export default function Standard({ children }) {
   return (
     <div className="h-full">
       <Head/>
+
+      <div className="z-0 fixed top-1/3 left-1/2 w-36 h-36 bg-pink-400 rounded-full mix-blend-multiply filter blur-xl opacity-90 animate-pulse"></div>
+      <div className="z-0 fixed top-1/3 right-80 w-72 h-72 bg-purple-400 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse"></div>
+      <div className="z-0 fixed top-3/4 left-40 w-72 h-72 bg-blue-400 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse"></div>
+      <div className="z-0 fixed top-1/3 right-40 w-36 h-36 bg-pink-400 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse "></div>
+      <div className="z-0 fixed top-1/2 right-90 w-20 h-20 bg-yellow-400 rounded-full mix-blend-multiply filter blur-xl opacity-90 animate-pulse "></div>
+      <div className="z-0 fixed top-1/4 left-80 w-36 h-36 bg-purple-400 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse"></div>
+      <div className="z-0 fixed top-1/2 left-80 w-72 h-72 bg-green-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse"></div>
+      <div className="z-0 fixed top-1/2 left-1/2 w-60 h-60 bg-blue-400 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse"></div>
+      <div className="z-0 fixed top-1/3 right-1/3 w-60 h-60 bg-yellow-400 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse"></div>
       
       <Dot key={1}></Dot>
       <Dot key={2}></Dot>

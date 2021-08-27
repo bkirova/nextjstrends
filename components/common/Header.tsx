@@ -10,7 +10,7 @@ export default function Menu() {
             <div className="container mx-auto flex flex-wrap items-center justify-between">
               <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
                 <a
-                  className="text-3xl font-extrabold text-gray-700"
+                  className="text-3xl font-extrabold text-black"
                   href="/"
                 >
                   <span className="text-yellow-300">AI</span> Stories
@@ -42,7 +42,7 @@ export default function Menu() {
                   </li> */}
                   <li className="nav-item">
                     <a
-                      className="px-3 py-2 text-base font-medium text-gray-500 hover:text-gray-900 items-center inline-flex"
+                      className="px-3 py-2 text-base font-medium text-black hover:text-gray-500 items-center inline-flex"
                       href="/generated"
                     >
                       AI
@@ -62,7 +62,7 @@ export default function Menu() {
                   </li> */}
                   <li className="nav-item">
                     <a
-                      className="px-3 py-2 text-base font-medium text-gray-500 hover:text-gray-900 items-center inline-flex"
+                      className="px-3 py-2 text-base font-medium text-black hover:text-gray-500 items-center inline-flex"
                       href="/about"
                     >
                       About
@@ -70,7 +70,7 @@ export default function Menu() {
                   </li>
                   <li className="nav-item">
                     <a
-                      className="px-3 py-2 text-base font-medium text-gray-500 hover:text-gray-900 items-center inline-flex"
+                      className="px-3 py-2 text-base font-medium text-black hover:text-gray-500 items-center inline-flex"
                       href="https://devghoststories.com/"
                     >
                       Blog

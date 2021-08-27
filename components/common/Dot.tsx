@@ -5,6 +5,7 @@ export default function Dot() {
   let options = generateRandomDot()
 
     return (
+      // <span></span>
       <motion.div
           className={`z-0 fixed top-${options.position.top} ${options.position.left ? 'left-' + options.position.left : 'right-' + options.position.right} w-${options.size} h-${options.size} bg-${options.color}-300 rounded-full mix-blend-multiply filter blur-lg`}
           initial={{ scale: 1, opacity: 0 }}
