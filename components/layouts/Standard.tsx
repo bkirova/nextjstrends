@@ -35,9 +35,13 @@ export default function Standard({ children }) {
       <Dot key={10}></Dot>
 
       <div className="relative flex flex-col z-1 h-full min-h-screen">
-        <Header/>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 h-full">
-            <main>{children}</main>
+          <Header/>
+          <div className="contenair bg-cover min-h-screen w-full flex justify-center items-center">
+            <div className="bg-white p-5 rounded-2xl bg-opacity-60 backdrop-filter backdrop-blur-lg">
+              <main>{children}</main>
+            </div>
+          </div>
         </div>
         <Footer/>
       </div>
