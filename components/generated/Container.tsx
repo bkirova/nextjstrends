@@ -7,6 +7,9 @@ import SwiperCore, {Pagination, Navigation} from 'swiper/core';
 
 SwiperCore.use([Pagination, Navigation]);
 
+interface Item {
+    image: string;
+}
 
 export default function Container() {
     let [generatedData, setGeneratedData] = useState([])
@@ -87,7 +90,7 @@ export default function Container() {
                                     Generations
                                 </p>
                                 <div className="bg-white flex overflow-x-auto custom-shadow rounded-lg"> 
-                                    {generatedData.map((item:Array<any>, index) => (
+                                    {generatedData.map((item:Item, index) => (
                                         <img key={index} src={item.image} alt="" className="w-60 h-60 py-3 pl-3"/>
                                     ))}
                                 </div>

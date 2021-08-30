@@ -6,7 +6,7 @@ function Home({ items }) {
 
   return (
     <Layout>
-        <section className="pt-20">
+        <section className="lg:pt-20 pt-10">
             <div className="px-3 mx-auto max-w-7xl">
                 <motion.div 
                 initial={{ opacity: 0 }}
@@ -14,7 +14,7 @@ function Home({ items }) {
                 transition={{
                     duration: 0.5,
                 }}
-                className="w-full mx-auto text-left md:w-11/12 xl:w-9/12 md:text-center">
+                className="w-full mx-auto text-left md:w-11/12 xl:w-9/12 md:text-center p-3">
                     <div className="mb-8 text-4xl font-extrabold text-black md:text-6xl md:tracking-tight ">
                         <span>Generate</span> <span className="block w-full py-2 text-transparent bg-clip-text lg:leading-normal leading-none bg-gradient-to-r from-green-400 to-purple-500 lg:inline">images and posts</span> <span>with AI 🤖</span>
                     </div>

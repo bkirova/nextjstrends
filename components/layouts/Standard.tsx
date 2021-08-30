@@ -38,7 +38,7 @@ export default function Standard({ children }) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 h-full">
           <Header/>
           <div className="contenair bg-cover min-h-screen w-full flex justify-center items-center">
-            <div className="bg-white p-5 rounded-2xl bg-opacity-60 backdrop-filter backdrop-blur-lg">
+            <div className="bg-white rounded-2xl bg-opacity-60 backdrop-filter backdrop-blur-lg">
               <main>{children}</main>
             </div>
           </div>
